@@ -1,11 +1,12 @@
 import React from 'react'
 import { FaInstagram, FaFacebookF, FaMapMarkedAlt } from "react-icons/fa";
 import './LinksFooter.css'
+import logo from '../../assets/logo/galacticaLogo.png'
 
 function LinksFooter() {
   return (
     <div className='linksFooter'>
-        <button className='stayInTheKnowBtn'>STAY IN THE KNOW</button>
+      <button className='stayInTheKnowBtn'>STAY IN THE KNOW</button>
       <div className='linksBox'>
         <div className='firstColumn'>
           <p className='textLinkBox'>GET IN TOUCH</p>
@@ -26,6 +27,9 @@ function LinksFooter() {
           <p className='textLinkBox'>COMPANY NO.12026354</p>
           <p className='textLinkBox'>&#169; 2023 GALACTICA,SL</p>
         </div>
+      </div>
+      <div className='logoBox'>
+        <img id='logo' src={logo}/>
       </div>
     </div>
   )
