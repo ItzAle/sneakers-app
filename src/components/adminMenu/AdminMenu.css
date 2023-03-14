@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+}
+.userDetails{
+    display: none;
+}
+#adminMenu{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 15px;
+    margin-top: 50px;
+    color: white;
+}
+#adminMenu li{
+    padding: 20px;
+    border-radius: 0.7em;
+    border: none;
+    height: 150px;
+    background-color: #5B1932;
+}
+#adminMenu li:hover{
+    background-color: #842348;
+}
+.adminMenuIcons{
+    font-size: 60px;
+}
+.adminMenuP{
+    font-size: 25px;
+}
+.adminMenuPC{
+    display: none;
+}
+.menuContent{
+    margin-top: 30px;
+}
+
+
+/* desktop */
+@media (min-width: 1100px){
+    .menu{
+        margin: 0;
+        flex-direction: row;
+    }
+    #adminMenu{
+        background-color: #5B1932;
+        margin-top: 0;
+        height: 100vh;
+        width: 15vw;
+        gap: 5;
+    }
+    .userDetails{
+        display: flex;
+        margin: 50px 10px 60px;
+        align-items: center;
+        gap: 5px;
+    }
+    #userPicIcon{
+        background-color: lightgrey;
+        border-radius: 3em;
+        height: 70px;
+        width: 70px;
+    }
+    #adminMenu li{
+        display: flex;
+        align-items: center;
+        margin: 0;
+        height: 30px;
+        background-color: transparent;
+    }
+    .adminMenuIcons{
+        display: none;
+    }
+    .adminMenuP, .adminMenuPC{
+        font-size: 15px;
+    }
+    .adminMenuPC{
+        display: block;
+    }
+    .menuContent{
+        margin: 30px;
+        width: 100%;
+        border: 1px solid black;
+    }
+}
