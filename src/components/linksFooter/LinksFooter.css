@@ -18,17 +18,43 @@
 .linksBox{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 20px;
+    margin: 30px 10px;
 }
 .textLinkBox{
-    font-size: 9px;
+    font-size: 10px;
+}
+.topVoid{
+    margin-top: 10px;
+}
+.iconLink{
+    margin-right: 5px;
 }
 .logoBox{
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: center;
 }
 #logo{
-    margin: 40px 20px 10px;
+    margin: 20px;
     width: 50px;
+}
+
+/* desktop */
+@media (min-width: 1100px){
+    .stayInTheKnowBtn{
+        display: none;
+    }
+    .linksBox{
+        grid-template-columns: repeat(5, 1fr);
+        margin: 30px;
+    }
+    .textLinkBox{
+        font-size: 13px;
+    }
+    .logoBox{
+        justify-content: flex-end;
+    }
+    #logo{
+        width: 100px;
+    }
 }

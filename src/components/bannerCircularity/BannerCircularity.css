@@ -8,6 +8,7 @@
     width: 100%;
     background-color: #161616;
     color: #FFFFFF;
+    gap: 10px;
 }
 .circularityImgBox{
     width: 45%;
@@ -18,10 +19,11 @@
 }
 .circularityTextBox{
     width: 55%;
-    margin: 7px;
+    margin: 0 auto;
 }
 .h1Circularity{
-    font-size: 25px;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 .h5Circularity{
     font-size: 11px;
@@ -49,11 +51,17 @@
     }
     .circularityTextBox{
         width: 30%;
-        margin: auto;
         text-align: center;
+        margin: auto;
+    }
+    .h1Circularity{
+        font-size: 40px;
     }
     .h5Circularity{
         text-align: justify;
-        margin: 15px 0;
+        font-size: 13px;
+    }
+    .knowMoreBtn{
+        font-size: 12px;
     }
 }
