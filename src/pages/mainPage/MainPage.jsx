@@ -3,7 +3,7 @@ import "./MainPage.css"
 import Navbar from "../../components/navbar/Navbar"
 import { Link } from 'react-router-dom'
 import SneakersServices from '../../apiServices/SneakersServices'
-
+import Footer from '../../components/footer/footer'
 
 function MainPage() {
   const[sneakers, setSneakers] = useState([])
@@ -33,6 +33,7 @@ function MainPage() {
             </div>
           </Link>
         )})}
+        <Footer/>
 
     </div>
    
