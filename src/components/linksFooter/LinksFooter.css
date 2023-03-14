@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.linksFooter{
+    background-color: #D3F3F1;
+    padding-top: 20px;
+}
+.stayInTheKnowBtn{
+    background-color: transparent;
+    border: solid black 2px;
+    border-radius: 2em;
+    padding: 3px 10px;
+    margin: auto;
+    display: block;
+}
+.linksBox{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
