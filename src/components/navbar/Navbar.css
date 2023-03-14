@@ -82,6 +82,27 @@
   .nav_toggle.open > span:nth-child(3) {
     transform: rotate(-45deg) translate(-5px, 1px);
   }
+  .navbar_desk {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar {
+    display: none !important;
+  }
+  .navbar_desk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .nav_links {
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+  }
 }
 
 /* Fuente */
