@@ -9,8 +9,8 @@ const SneakersServices = {
             .catch((err)=>console.log(err))
     },
 
-    getSneakerById(id){
-        return axios.get(url + `/${id}` )
+    getSneakerById(uuid){
+        return axios.get(url + `/${uuid}` )
         .then((res)=>res.data)
         .catch((err)=>console.log(err))
     }

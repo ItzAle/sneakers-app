@@ -7,10 +7,10 @@ import React, { useEffect, useState } from 'react'
 function InfoPage() {
     const[sneakerId, setSneakerId] = useState([])
 
-    const {id} = useParams()
+    const {uuid} = useParams()
 
     useEffect(()=>{
-      SneakersServices.getSneakerById(id)
+      SneakersServices.getSneakerById(uuid)
         .then((data)=> setSneakerId(data))
         // .then((data)=> console.log(data))
   
@@ -20,7 +20,7 @@ function InfoPage() {
     <>
         <NavBar/>
         <div className='articleMain'>
-            <div className='infoShoe' key={sneakerId.id}>
+            <div className='infoShoe' key={sneakerId.uuid}>
                 <img className='imgShoe' src={sneakerId.img} alt="shoe" />
                 <div>
                     <h1>{sneakerId.brand}</h1>
