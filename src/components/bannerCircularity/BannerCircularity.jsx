@@ -5,7 +5,7 @@ function BannerCircularity() {
   return (
     <div className='bannerCircularity'>
       <div className='circularityImg'>
-        <img src={Image}/>
+        <img src={Image} alt="OA"/>
       </div>
       <div className='circularityText'>
         <h1 className='h1Circularity'>CIRCULARITY</h1>
