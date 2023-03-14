@@ -1,4 +1,3 @@
-import "./MainPage.css"
 import Navbar from "../../components/navbar/Navbar"
 import BannerFeelYourShoes from '../../components/bannerFeelYourShoes/BannerFeelYourShoes'
 import BannerFreeShipping from '../../components/bannerFreeShipping/BannerFreeShipping'
@@ -10,7 +9,7 @@ import LinksFooter from '../../components/linksFooter/LinksFooter'
 function MainPage() {
   return (    
     <div className='mainPage'>
-      <Navbar/>
+      {/* <Navbar/> */}
       <BannerFeelYourShoes/>
       <BannerFreeShipping/>
       <GalacticaTeam/>

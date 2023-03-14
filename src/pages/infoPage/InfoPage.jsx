@@ -18,7 +18,7 @@ function InfoPage() {
     
   return (
     <>
-        <NavBar/>
+        {/* <NavBar/> */}
         <div className='articleMain'>
             <div className='infoShoe' key={sneakerId.uuid}>
                 <img className='imgShoe' src={sneakerId.img} alt="shoe" />

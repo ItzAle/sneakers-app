@@ -5,7 +5,7 @@ import Navbar from '../../components/navbar/Navbar'
 function adminPage() {
   return (
     <>
-        <Navbar/>
+        {/* <Navbar/> */}
         <AdminMenu/>
     </>
   )
