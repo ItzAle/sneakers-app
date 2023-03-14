@@ -11,7 +11,6 @@ function MainPage() {
   return (    
     <div className='mainPage'>
       <Navbar/>
-      <p>hola</p>
       <BannerFeelYourShoes/>
       <BannerFreeShipping/>
       <GalacticaTeam/>
