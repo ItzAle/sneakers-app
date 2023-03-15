@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 20px;
+}
+
+h1{
+    font-size: 1.5rem;
+    font-family: Arsenal;
+}
+
+h2{
+    padding-left: 5px;
+    font-size: 1rem;
+    font-family: Arsenal;
+}
