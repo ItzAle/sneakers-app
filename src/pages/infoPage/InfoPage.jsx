@@ -25,7 +25,7 @@ function InfoPage() {
                 <div>
                     <h1>{sneakerId.brand}</h1>
                     <h3>{sneakerId.model}</h3>
-                    <p>{sneakerId.price} €</p>
+                    
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Reprehenderit fugit asperiores quas animi consequuntur 
                         nostrum commodi eligendi labore dolorem praesentium? Dolore 
@@ -33,6 +33,7 @@ function InfoPage() {
                         voluptas!</p>
                     <div className='buyShoe'>
                         <button className='buyButton'>COMPRAR</button>
+                        <p>{sneakerId.price} €</p>
                     </div>
                 </div>
             </div>
