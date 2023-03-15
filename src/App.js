@@ -10,6 +10,7 @@ function App() {
       <Route path="/infoShoe/:id" element={<InfoPage />} />
       <Route path="/admin" element={<AdminPage />} />
     </Routes>
+    
   );
 }
 
