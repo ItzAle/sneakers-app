@@ -1,10 +1,14 @@
 .navbar {
   display: none;
-  background: #ffff;
+  background-color: #ffff;
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  position: absolute;
+  z-index: 400;
+  right: 0;
+  width: 100%;
 }
 .nav_logo {
   font-family: Arsenal;
@@ -16,9 +20,11 @@
   height: 50px;
 }
 .nav_items a {
-  margin: 50px;
+  padding: 50px;
+  background-color: white;
   color: black;
   text-align: center;
+  text-decoration: none;
   font-weight: 600;
   position: relative;
   text-decoration: none;
@@ -32,7 +38,7 @@
 }
 .nav_items a:hover {
   transition: all 0.4s ease-in-out;
-  color: rgb(63, 4, 40);
+  color: rgb(85, 85, 85);
 }
 .nav_toggle {
   display: none;
@@ -54,7 +60,7 @@
     height: -webkit-fill-available;
     transform: translateX(-100%);
     transition: 0.3s ease all;
-    gap: 20px;
+    /* gap: 20px; */
   }
   .nav_items.open {
     transform: translateX(0) !important;
