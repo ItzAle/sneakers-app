@@ -7,7 +7,9 @@ export default function ShopPage() {
   
       <div className='productCard'>
         <div className='imgBox'>
-          <img className='productImg'  src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b7beee7c32d4438aaba3acb6001c2e7b_9366/Zapatilla_Forum_Low_Blanco_FY7757_01_standard.jpg" alt="Product" />
+          <img className='productImg'  src="https://assets.adidas.com/images/h_840,f_auto,q_auto,
+          fl_lossy,c_fill,g_auto/b7beee7c32d4438aaba3acb6001c2e7b_9366/Zapatilla_Forum_Low_Blanco
+          _FY7757_01_standard.jpg" alt="Product" />
         </div>
         <div className='productInfo'>
           <h3 className='model'>Model</h3>
