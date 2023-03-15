@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams} from 'react-router-dom'
-import SneakersServices from '../../apiServices/SneakersServices'
 import './InfoPage.css'
 import NavBar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/footer'
+import SneakersServices from '../../apiServices/SneakersServices'
 
 function InfoPage() {
     const[sneakerId, setSneakerId] = useState([])
