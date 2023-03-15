@@ -1,45 +1,49 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .articleMain{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-}
-
-.infoShoe{
     width: 85%;
+    display: block;
+    margin: 0 auto 20px;
+    padding-top: 8vh;
+}
+.infoShoe{
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
-
 .imgShoe{
     width: 100%;
-    margin-bottom: 10px;
 }
-
-.buyShoe{
-    
+.infoShoeInfo{
+    margin: 15px 0;
+    text-align: justify;
+}
+.infoShoePrice{
+    font-size: 25px;
+    font-weight: bold;
+}
+.buyBtnBox{
     display: flex;
-    flex-direction:row-reverse; 
-    width: 100%;
-
     justify-content: space-between;
-    
-    
-   
+    margin-top: 50px;
 }
-
-.buyButton{
+.buyBtn{
     padding: 7px 30px;
-    
-    border: none;
-    border-radius: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 2em;
     font-size: 1em;
     font-weight: 600;
+}
+
+@media (min-width: 1100px){
+    .infoShoe{
+        display: flex;
+        flex-direction: row;
+        height: 350px;
+    }
+    .imgShoe{
+        width: 100%;
+        object-fit: contain;
+    }
+    .infoShoeText{
+        margin: auto;
+    }
 }

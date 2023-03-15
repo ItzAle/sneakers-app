@@ -7,20 +7,22 @@ function Footer() {
   return (
     <div className="footer">
       <Link to={"/"}>
-        <h1>GALACTICA</h1>
+        <h1 className="footerLogo">GALACTICA</h1>
       </Link>
-      <Link to={"/"}>
-        <h2>SHOP</h2>
-      </Link>
-      <Link to={"/"}>
-        <h2>TEAM</h2>
-      </Link>
-      <Link to={"/"}>
-        <h2>SUSTAINABILITY</h2>
-      </Link>
-      <Link to={"/"}>
-        <h2>OUR PROCESS</h2>
-      </Link>
+      <div className="footerMenu">
+        <Link to={"/"}>
+          <p className="footerMenuText">SHOP</p>
+        </Link>
+        <Link to={"/"}>
+          <p className="footerMenuText">TEAM</p>
+        </Link>
+        <Link to={"/"}>
+          <p className="footerMenuText">SUSTAINABILITY</p>
+        </Link>
+        <Link to={"/"}>
+          <p className="footerMenuText">OUR PROCESS</p>
+        </Link>
+      </div>
     </div>
   );
 }

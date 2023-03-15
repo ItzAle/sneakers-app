@@ -6,40 +6,34 @@
     margin: 0 15px;
     gap: 10px;
 }
-
 .productCard{
-    background-color: red;
+    color: black;
     display: flex;
     flex-direction: column;
     padding: 10px;
+    border: 1px solid black;
+    border-radius: 1em;
 }
-
 .imgBox{
     height: 150px;
     width: 100%;
 }
-
 .productImg{
+    border-radius: 1em;
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
-
-/* .productInfo{
-    height: 130px;
-    position: relative;
-} */
-
 .model{
     font-weight: 500;
 }
-
 .price{
     text-align: right;
 }
-/* 
-.priceBox{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-} */
+
+@media (min-width: 1100px){
+    .shopPage{
+        padding-top: 8vh;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
