@@ -16,7 +16,7 @@ function Navbar() {
           <h1 className="nav_logo">GALACTICA</h1>
         </Link>
         <div className={`nav_items ${isOpen && "open"}`}>
-          <Link to={"#"}>
+          <Link to={"/shop"}>
             <RiShoppingBag3Line /> SHOP
           </Link>
           <Link to={"#"}>
@@ -44,11 +44,11 @@ function Navbar() {
         </Link>
         <div className="nav_links">
           <Link to={"#"}>OUR TEAM</Link>
-          <Link to={"#"}>SHOP</Link>
+          <Link to={"/shop"}>SHOP</Link>
           <Link to={"/admin"}>CIRCULARITY</Link>
           <Link to={"/"}>FAQS</Link>
           <Link to={"/"}>LOG IN</Link>
-          <Link to={"/"}>ADMIN</Link>
+          <Link to={"/admin"}>ADMIN</Link>
         </div>
       </div>
     </div>

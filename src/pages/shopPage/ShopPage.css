@@ -1,0 +1,45 @@
+.shopPage{
+    padding-top: 17vh;
+    padding-bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 15px;
+    gap: 10px;
+}
+
+.productCard{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.imgBox{
+    height: 150px;
+    width: 100%;
+}
+
+.productImg{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* .productInfo{
+    height: 130px;
+    position: relative;
+} */
+
+.model{
+    font-weight: 500;
+}
+
+.price{
+    text-align: right;
+}
+/* 
+.priceBox{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+} */
