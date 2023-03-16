@@ -7,11 +7,11 @@ import SneakersServices from '../../apiServices/SneakersServices'
 
 function InfoPage() {
     const[sneakerId, setSneakerId] = useState([])
-    const {uuid} = useParams()
+    const {id} = useParams()
     useEffect(()=>{
-      SneakersServices.getSneakerById(uuid)
-        // .then((data)=> setSneakerId(data))
-        .then((data)=> console.log(data))
+      SneakersServices.getSneakerById(id)
+        .then((data)=> setSneakerId(data))
+        // .then((data)=> console.log(data))
   
     },[])
 
@@ -19,14 +19,14 @@ function InfoPage() {
     <>
         <NavBar/>
         <div className='articleMain'>
-            <div className='infoShoe' key={sneakerId.uuid}>
-                <img className='imgShoe' src='https://www.tint-store.com/de-de/Data/Images/Big/adidas-originals-forum-low-weiss-schwarz-fy7757-lifestyle_right_back.jpg' alt="shoe" />
+            <div className='infoShoe' key={sneakerId.id}>
+                <img className='imgShoe' src={sneakerId.img} alt="shoe" />
                 <div className='infoShoeText'>
-                    <h1 className='infoShoeBrand'>{sneakerId.brand}hola</h1>
-                    <h3 className='infoShoeModel'>{sneakerId.model}hola</h3>
-                    <p className='infoShoeInfo'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit fugit asperiores quas animi consequuntur nostrum commodi eligendi labore dolorem praesentium? Dolore nostrum aspernatur obcaecati hic mollitia consequatur iure quasi voluptas!</p>
+                    <h1 className='infoShoeBrand'>{sneakerId.brand}</h1>
+                    <h3 className='infoShoeModel'>{sneakerId.model}</h3>
+                    <p className='infoShoeInfo'>{sneakerId.description}</p>
                     <div className='buyBtnBox'>
-                        <p className='infoShoePrice'>{sneakerId.price}92 €</p>
+                        <p className='infoShoePrice'>{sneakerId.price} €</p>
                         <button className='buyBtn'>Add to cart</button>
                     </div>
                 </div>

@@ -12,6 +12,8 @@ export default function ShopPage() {
   useEffect(()=>{
     SneakersServices.getAllSneakers()
       .then((data)=>{setSneakers(data)
+        // .then((data)=>{console.log(data)
+
     })},[]);
 
   return (
@@ -20,7 +22,7 @@ export default function ShopPage() {
     <div className='shopPage'>
       {sneakers.map((item) =>{
         return(
-          <Link to={`/infoShoe/:${item.uuid}`}>
+          <Link to={`/infoShoe/${item.id}`}>
             <div className='productCard'>
               <div className='imgBox'>
                 <img className='productImg' src={item.img} alt="Product" />
