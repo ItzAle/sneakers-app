@@ -13,6 +13,18 @@ const SneakersServices = {
         return axios.get(url + `/${id}` )
         .then((res)=>res.data)
         .catch((err)=>console.log(err))
+    },
+
+    addSneaker(){
+        return axios.post(url)
+        .then((res)=> res.data)
+        .catch((err)=>console.log(err))
+    },
+
+    deleteSneaker(id){
+        return axios.delete(url + `/${id}`)
+        .then((res)=> res.data)
+        .catch((err)=>console.log(err))
     }
 }
 
