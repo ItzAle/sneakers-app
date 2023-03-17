@@ -11,8 +11,9 @@ function BannerFeelYourShoes() {
       <h1 className='titleGalactica'>GALACTICA</h1>
       <div className='feelYourSection'>
         <h3 className='caption'>A NEW WAY TO FEEL YOUR <br/> SHOES</h3>
-        <button className='shopNowButton'>SHOP NOW</button>
-        <button className='ourNowButton'>OUR TEAM</button>
+        <button className='roundTransparentBtn whiteBorder' id='shopNowButton'>SHOP NOW</button>
+        <button className='roundTransparentBtn blackBorder' id='ourNowButton'>OUR TEAM</button>
+
       </div>
     </div>
     <div className='trendSection'>
@@ -23,7 +24,8 @@ function BannerFeelYourShoes() {
             <p className='titleArticle'>FORUM LOW</p>
             <p className='priceArticle'>$110</p>
           </div>
-          <button className='buttonShop'>SHOP</button>
+          <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
+
         </div>
       </article>
       <article className='articleSnickers'>
@@ -33,7 +35,7 @@ function BannerFeelYourShoes() {
             <p className='titleArticle'>BUSENITZ</p>
             <p>$130</p>
           </div>
-          <button className='buttonShop'>SHOP</button>
+          <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
         </div>
       </article>
     </div>

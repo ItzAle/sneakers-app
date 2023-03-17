@@ -15,8 +15,14 @@ const SneakersServices = {
         .catch((err)=>console.log(err))
     },
 
-    addSneaker(){
-        return axios.post(url)
+    addSneaker(data){
+        return axios.post(url, data)
+        .then((res)=> res.data)
+        .catch((err)=>console.log(err))
+    },
+
+    editSneaker(id, changes){
+        return axios.put(url + `/${id}`, changes)
         .then((res)=> res.data)
         .catch((err)=>console.log(err))
     },

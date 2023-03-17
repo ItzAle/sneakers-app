@@ -11,7 +11,6 @@ function InfoPage() {
     useEffect(()=>{
       SneakersServices.getSneakerById(id)
         .then((data)=> setSneakerId(data))
-        // .then((data)=> console.log(data))
   
     },[])
 
@@ -27,7 +26,7 @@ function InfoPage() {
                     <p className='infoShoeInfo'>{sneakerId.description}</p>
                     <div className='buyBtnBox'>
                         <p className='infoShoePrice'>{sneakerId.price} €</p>
-                        <button className='buyBtn'>Add to cart</button>
+                        <button className='roundBlackBtn' id='buyBtn'>Add to cart</button>
                     </div>
                 </div>
             </div>

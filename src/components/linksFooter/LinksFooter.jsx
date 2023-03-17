@@ -6,7 +6,8 @@ import logo from '../../assets/logo/galacticaLogo.png'
 function LinksFooter() {
   return (
     <div className='linksFooter'>
-      <button className='stayInTheKnowBtn'>STAY IN THE KNOW</button>
+      <button className='roundTransparentBtn blackBorder' id='stayInTheKnowBtn'>STAY IN THE KNOW</button>
+
       <div className='linksBox'>
         <div className='firstColumn'>
           <p className='textLinkBox'>GET IN TOUCH</p>

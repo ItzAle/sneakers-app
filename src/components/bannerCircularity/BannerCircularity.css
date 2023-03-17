@@ -28,16 +28,12 @@
 .h5Circularity{
     font-size: 11px;
 }
-.knowMoreBtn{
-    background-color: transparent;
-    color: #FFFFFF;
-    border: #FFFFFF solid 2px;
-    border-radius: 2em;
+#knowMoreBtn{
     margin-top: 20px;
     font-size: 10px;
     padding: 2px 7px;
 }
-/* desktop */
+
 @media (min-width: 1100px){
     .bannerCircularity{
         flex-direction: row-reverse;
