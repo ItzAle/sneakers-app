@@ -3,6 +3,7 @@ import './BannerFeelYourShoes.css'
 import topImg from '../../assets/webImg/feelYourShoes.jpg'
 import bannerImg from '../../assets/webImg/freeShipping.jpg'
 import SneakersServices from '../../apiServices/SneakersServices'
+import { Link } from 'react-router-dom'
 
 function BannerFeelYourShoes() {
   const [sneakers, setSneakers] = useState([])
@@ -37,16 +38,18 @@ function BannerFeelYourShoes() {
     <div className='highlightSection'>
     {newSneakerArray.map((item)=>{
       return(
-        <div className='highlightCard'>
-          <img src={item.img} alt="Sneacker" className='highlightImg'/>
-          <div className='highlightData'>
-            <p className='highlightModel'>{item.model}</p>
-            <div className='highlightInfo'>
-              <p className='highlightPrice'>{item.price} €</p>
-              <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
+        <Link to={`/infoShoe/${item.id}`}>
+          <div className='highlightCard'>
+            <img src={item.img} alt="Sneacker" className='highlightImg'/>
+            <div className='highlightData'>
+              <p className='highlightModel'>{item.model}</p>
+              <div className='highlightInfo'>
+                <p className='highlightPrice'>{item.price} €</p>
+                <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       )})}
     </div>
     <div className='banner'>
