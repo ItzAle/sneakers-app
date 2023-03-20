@@ -1,9 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './BannerFeelYourShoes.css'
 import topImg from '../../assets/webImg/feelYourShoes.jpg'
 import bannerImg from '../../assets/webImg/freeShipping.jpg'
+import SneakersServices from '../../apiServices/SneakersServices'
 
 function BannerFeelYourShoes() {
+  const [sneakers, setSneakers] = useState([])
+
+  useEffect(()=>{
+    SneakersServices.getAllSneakers()
+      .then((data)=>{setSneakers(data)
+    })},[]);
+
+  const isHighlight = (sneaker) => {
+    for(let i = 0; i < sneakers.length; i++){
+      if(!sneaker.highlights){
+        return false
+      }
+      return sneaker
+    }
+  }
+
+  console.log(sneakers.filter(isHighlight))
+
   return (
     <>
     <div className='bannerFeel'>
@@ -16,29 +35,29 @@ function BannerFeelYourShoes() {
 
       </div>
     </div>
-    <div className='trendSection'>
-      <article className='articleSnickers'>
-        <img src="https://www.tint-store.com/de-de/Data/Images/Big/adidas-originals-forum-low-weiss-schwarz-fy7757-lifestyle_right_back.jpg" alt="Snicker" className='articleImg'/>
-        <div className='containerInfo'>
-          <div className='infoAndPrice'>
-            <p className='titleArticle'>FORUM LOW</p>
-            <p className='priceArticle'>$110</p>
-          </div>
-          <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
 
-        </div>
-      </article>
-      <article className='articleSnickers'>
-        <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/87e278ebf8cf4706a3bda7fa00e450a5_9366/Busenitz_Pro_Schuh_Schwarz_G48060_01_standard.jpg" alt="Snicker" className='articleImg'/>
-        <div className='containerInfo'>
-          <div className='infoAndPrice'>
-            <p className='titleArticle'>BUSENITZ</p>
-            <p>$130</p>
+
+    <div className='highlightSection'>
+    
+        <div className='highlightCard'>
+          <img src="" alt="Sneacker" className='highlightImg'/>
+          <div className='highlightData'>
+            <div className='highlightInfo'>
+              <p className='highlightModel'></p>
+              <p className='highlightPrice'></p>
+            </div>
+            <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
           </div>
-          <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
         </div>
-      </article>
+
+      
+        
+      
     </div>
+
+
+
+
     <div className='banner'>
       <img src={bannerImg} alt="Banner" className='bannerImg'/>
       <h1 className='upBanner'>WORLDWIDE FREE <br/> SHIPPING TAX</h1>
