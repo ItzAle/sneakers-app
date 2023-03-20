@@ -20,8 +20,8 @@ function BannerFeelYourShoes() {
       return sneaker
     }
   }
-
-  console.log(sneakers.filter(isHighlight))
+  const newSneakerArray = sneakers.filter(isHighlight);
+  console.log(newSneakerArray);
 
   return (
     <>
@@ -38,17 +38,20 @@ function BannerFeelYourShoes() {
 
 
     <div className='highlightSection'>
-    
+    {newSneakerArray.map((item)=>{
+      return(
         <div className='highlightCard'>
-          <img src="" alt="Sneacker" className='highlightImg'/>
+          <img src={item.img} alt="Sneacker" className='highlightImg'/>
           <div className='highlightData'>
             <div className='highlightInfo'>
-              <p className='highlightModel'></p>
-              <p className='highlightPrice'></p>
+              <p className='highlightModel'>{item.model}</p>
+              <p className='highlightPrice'>{item.price}</p>
             </div>
             <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
           </div>
         </div>
+      )})}
+        
 
       
         
