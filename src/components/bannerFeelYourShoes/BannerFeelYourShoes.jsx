@@ -32,35 +32,23 @@ function BannerFeelYourShoes() {
         <h3 className='caption'>A NEW WAY TO FEEL YOUR <br/> SHOES</h3>
         <button className='roundTransparentBtn whiteBorder' id='shopNowButton'>SHOP NOW</button>
         <button className='roundTransparentBtn blackBorder' id='ourNowButton'>OUR TEAM</button>
-
       </div>
     </div>
-
-
     <div className='highlightSection'>
     {newSneakerArray.map((item)=>{
       return(
         <div className='highlightCard'>
           <img src={item.img} alt="Sneacker" className='highlightImg'/>
           <div className='highlightData'>
+            <p className='highlightModel'>{item.model}</p>
             <div className='highlightInfo'>
-              <p className='highlightModel'>{item.model}</p>
-              <p className='highlightPrice'>{item.price}</p>
+              <p className='highlightPrice'>{item.price} €</p>
+              <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
             </div>
-            <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
           </div>
         </div>
       )})}
-        
-
-      
-        
-      
     </div>
-
-
-
-
     <div className='banner'>
       <img src={bannerImg} alt="Banner" className='bannerImg'/>
       <h1 className='upBanner'>WORLDWIDE FREE <br/> SHIPPING TAX</h1>
