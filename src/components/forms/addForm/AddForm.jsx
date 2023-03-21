@@ -11,7 +11,19 @@ function AddForm() {
         id : "",
     };
 
+    const sneakerModel = {
+        brand : "",
+        model : "",
+        price : "",
+        img : "",
+        description : "",
+        highlights : "",
+        categoryId : "1"
+    }
+
     const [categories, setCategories] = useState([categoryModel]);
+    const [sneaker, setSneaker] = useState([sneakerModel]);
+
     useEffect(()=>{
         SneakersServices.getAllSneakersCategories()
           .then((data)=>{setCategories(data)})
@@ -27,6 +39,29 @@ function AddForm() {
         form.style.display = 'none';
     }
 
+    const handleSneakerChange = (e) =>{
+        let name = e.target.name;
+        setSneaker({ 
+            ...sneaker, 
+            [name] : e.target.value 
+        })
+    }
+    
+    const handleCategoryChange = (e) =>{
+        const id =  e.target.name;
+        setSneaker({
+            ...sneaker,
+            [id] : e.target.value
+        })
+    } 
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        SneakersServices.addSneaker(sneaker)
+    }
+    
+    console.log(sneaker);
+
     return (
         <div className='addItem'>
             <button className='roundBlackBtn' id='addItemBtn' onClick={showForm}>Add</button>
@@ -36,27 +71,90 @@ function AddForm() {
                 
                 {categories && categories[0].name}
 
-                <div className='dataForm'>
+                <form className='dataForm'>
                     <label for="brandForm">Product brand:</label>
-                        <input type="text" id="brandForm" className='inputForm'/>
+                        <input 
+                            name='brand'
+                            type="text" 
+                            id="brandForm" 
+                            className='inputForm' 
+                            placeholder='Brand'
+                            value={sneaker.brand}
+                            onChange={handleSneakerChange}
+                        />
                     <label for="modelForm">Product model:</label>
-                        <input type="text" id="modelForm" className='inputForm'/>
+                        <input 
+                            name='model'
+                            type="text" 
+                            id="modelForm" 
+                            className='inputForm' 
+                            placeholder='Model'
+                            value={sneaker.model}
+                            onChange={handleSneakerChange}
+                        />
                     <label for="priceForm">Product price:</label>
-                        <input type="text" id="priceForm" className='inputForm'/>
+                        <input 
+                            name='price'
+                            type="text" 
+                            id="priceForm" 
+                            className='inputForm' 
+                            placeholder='Price'
+                            value={sneaker.price}
+                            onChange={handleSneakerChange}
+                        />
                     <label for="imgForm">Product image:</label>
-                        <input type="text" id="imgForm" className='inputForm'/>
+                        <input 
+                            name='img'
+                            type="text" 
+                            id="imgForm" 
+                            className='inputForm' 
+                            placeholder='Url'
+                            value={sneaker.img}
+                            onChange={handleSneakerChange}
+                        />
                     <label for="descriptionForm">Product description:</label>
-                        <input type="text" id="descriptionForm" className='inputForm'/>
+                        <input 
+                            name='description'
+                            type="text" 
+                            id="descriptionForm" 
+                            className='inputForm' 
+                            placeholder='Description'
+                            value={sneaker.description}
+                            onChange={handleSneakerChange}
+                        />
+                    {/* <label for="highlightForm">Is this product a highlight? Answer with true or false:</label>
+                        <input 
+                            name='highlight'
+                            type="text" 
+                            id="highlightForm" 
+                            className='inputForm' 
+                            placeholder='True or False'
+                            value={sneaker.highlights}
+                            onChange={handleSneakerChange}
+                            check
+                        /> */}
                     <label for="categoryForm">Product category:</label>
-                        <select name='categoryForm' id='categoryForm' className='inputForm'>
-                        {categories.map(categoryName=>{
-                            return (
-                                <option value={categoryName.name} key={categoryName.id}>{categoryName.name}</option>
-                            )
-                        })}
+                        <select 
+                            name='categoryId'
+                            value={sneaker.categoryId}
+                            id='categoryForm' 
+                            className='inputForm' 
+                            onChange={handleCategoryChange}
+                        >
+                            {categories.map(categoryName=>{
+                                return (
+                                    <option value={categoryName.id} key={categoryName.id}>{categoryName.name}</option>
+                                )
+                            })}
                         </select>
-                    <button className='roundBlackBtn' id='addFormBtn'>Add product</button>
-                </div>
+                    <button 
+                        className='roundBlackBtn' 
+                        id='addFormBtn'
+                        onClick={handleSubmit}
+                    >
+                        Add product
+                    </button>
+                </form>
             </div>
         </div>
     )
