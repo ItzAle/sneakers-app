@@ -1,0 +1,47 @@
+.addForm{
+    background-color: white;
+    height: 70vh;
+    width: 90vw;
+    position: absolute;
+    top: 103px;
+    right: 20px;
+    border: black 1px solid;
+    border-radius: 1em;
+    padding: 15px;
+    display: none;
+}
+.dataForm{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+.inputForm{
+    border: black 1px solid;
+    border-radius: 0.5em;
+}
+#addFormBtn{
+    width: 150px;
+    margin-top: 50px;
+}
+.addItem{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+#addItemBtn{
+    padding: 5px 15px;
+}
+@media (min-width: 1100px){
+    .addForm{
+        width: 70vw;
+        top: 120px;
+        right: 160px;
+    }
+    #addFormBtn{
+        margin-top: 20px;
+    }
+    .addItem{
+        justify-content: flex-start;
+        margin: 0 0 20px;
+    }
+}

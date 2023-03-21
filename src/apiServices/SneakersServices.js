@@ -9,28 +9,34 @@ const SneakersServices = {
             .catch((err)=>console.log(err))
     },
 
+    getAllSneakersCategories() {
+        return axios.get(url + `/categories`)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
+
     getSneakerById(id){
         return axios.get(url + `/${id}` )
-        .then((res)=>res.data)
-        .catch((err)=>console.log(err))
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
     },
 
     addSneaker(data){
         return axios.post(url, data)
-        .then((res)=> res.data)
-        .catch((err)=>console.log(err))
+            .then((res)=> res.data)
+            .catch((err)=>console.log(err))
     },
 
     editSneaker(id, changes){
         return axios.put(url + `/${id}`, changes)
-        .then((res)=> res.data)
-        .catch((err)=>console.log(err))
+            .then((res)=> res.data)
+            .catch((err)=>console.log(err))
     },
 
     deleteSneaker(id){
         return axios.delete(url + `/${id}`)
-        .then((res)=> res.data)
-        .catch((err)=>console.log(err))
+            .then((res)=> res.data)
+            .catch((err)=>console.log(err))
     }
 }
 
