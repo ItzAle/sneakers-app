@@ -22,7 +22,7 @@ export default function ShopPage() {
     <>
     <Navbar/>
     <div className='CategorySelect'>
-      <Link to="/"><p className='options'>All Categories</p></Link>
+      <Link to="/shop"><p className='options'>All Categories</p></Link>
       <Link to="/"><p className='options'>Adults</p></Link>
       <Link to="/"><p className='options'>Kids</p></Link>
     </div>
