@@ -20,7 +20,7 @@ function Dashboard() {
       <AddForm/>
       {sneakers.map((item)=>{
         return(
-          <div className='dashBoardRow type1' key={item.id}>
+          <div className='dashBoardRow' key={item.id}>
             <p className='itemModel'>{item.model}</p>
             <p className='itemBrand'>{item.brand}</p>
             <p className='itemPrice'>{item.price}€</p>
