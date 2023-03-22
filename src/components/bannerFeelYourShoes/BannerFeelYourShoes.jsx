@@ -1,29 +1,8 @@
-import React, { useEffect, useState } from 'react'
 import './BannerFeelYourShoes.css'
 import topImg from '../../assets/webImg/feelYourShoes.jpg'
-import bannerImg from '../../assets/webImg/freeShipping.jpg'
-import SneakersServices from '../../apiServices/SneakersServices'
-import { Link } from 'react-router-dom'
+import HighlightSection from '../highlightSection/HighlightSection'
 
 function BannerFeelYourShoes() {
-  const [sneakers, setSneakers] = useState([])
-
-  useEffect(()=>{
-    SneakersServices.getAllSneakers()
-      .then((data)=>{setSneakers(data)
-    })},[]);
-
-  const isHighlight = (sneaker) => {
-    for(let i = 0; i < sneakers.length; i++){
-      if(!sneaker.highlights){
-        return false
-      }
-      return sneaker
-    }
-  }
-  const newSneakerArray = sneakers.filter(isHighlight);
-  console.log(newSneakerArray);
-
   return (
     <>
     <div className='bannerFeel'>
@@ -34,27 +13,6 @@ function BannerFeelYourShoes() {
         <button className='roundTransparentBtn whiteBorder' id='shopNowButton'>SHOP NOW</button>
         <button className='roundTransparentBtn blackBorder' id='ourNowButton'>OUR TEAM</button>
       </div>
-    </div>
-    <div className='highlightSection'>
-    {newSneakerArray.map((item)=>{
-      return(
-        <Link to={`/infoShoe/${item.id}`}>
-          <div className='highlightCard'>
-            <img src={item.img} alt="Sneacker" className='highlightImg'/>
-            <div className='highlightData'>
-              <p className='highlightModel'>{item.model}</p>
-              <div className='highlightInfo'>
-                <p className='highlightPrice'>{item.price} €</p>
-                <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
-              </div>
-            </div>
-          </div>
-        </Link>
-      )})}
-    </div>
-    <div className='banner'>
-      <img src={bannerImg} alt="Banner" className='bannerImg'/>
-      <h1 className='upBanner'>WORLDWIDE FREE <br/> SHIPPING TAX</h1>
     </div>
     </>
   )
