@@ -23,11 +23,21 @@ a{
     position: absolute;
     top: 5%;
     right: 9%;
+    color: gray;
+}
+.iconHeart:hover{
+    color: rgb(173, 1, 1);
+    cursor: pointer;
 }
 .iconShop{
     position: absolute;
     top: 16%;
     right: 8%;
+    color: gray;
+}
+.iconShop:hover{
+    color: black;
+    cursor: pointer;
 }
 .imgBox{
     height: 150px;
@@ -57,7 +67,7 @@ a{
     height: 1px;
     background-color: black;
     width: 95%;
-    margin: 10px auto;
+    margin: 10px auto 15px auto;
 }
 
 @media (min-width: 1100px){
