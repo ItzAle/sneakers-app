@@ -1,5 +1,8 @@
+a{
+    text-decoration: none;
+    color: black;
+}
 .shopPage{
-    padding-top: 17vh;
     padding-bottom: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -13,6 +16,18 @@
     padding: 10px;
     border: 1px solid black;
     border-radius: 1em;
+    position: relative;
+    text-decoration: none;
+}
+.iconHeart{
+    position: absolute;
+    top: 5%;
+    right: 9%;
+}
+.iconShop{
+    position: absolute;
+    top: 16%;
+    right: 8%;
 }
 .imgBox{
     height: 150px;
@@ -30,10 +45,48 @@
 .price{
     text-align: right;
 }
+.CategorySelect{
+    padding-top: 15vh;
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    padding-left: 10px;
+    font-weight: 500;
+}
+.lineBlack{
+    height: 1px;
+    background-color: black;
+    width: 95%;
+    margin: 10px auto;
+}
 
 @media (min-width: 1100px){
     .shopPage{
-        padding-top: 8vh;
+        padding-top: 30px;
         grid-template-columns: repeat(5, 1fr);
+    }
+    .CategorySelect{
+        padding-top: 0;
+        width: 100%;
+        display: flex;
+        gap: 25px;
+        padding-left: 20px;
+        font-size: 1.1em;
+    }
+    .options:hover{
+        color: rgb(85, 85, 85);
+        cursor: pointer;
+        
+    }
+    .lineBlack{
+        width: 97%;
+    }
+    .iconHeart{
+        top: 6%;
+        right: 6%;
+    }
+    .iconShop{
+        top: 18%;
+        right: 5%;
     }
 }

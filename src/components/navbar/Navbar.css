@@ -40,6 +40,7 @@
   transition: all 0.4s ease-in-out;
   color: rgb(85, 85, 85);
 }
+
 .nav_toggle {
   display: none;
 }
