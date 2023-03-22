@@ -1,6 +1,5 @@
 import './BannerFeelYourShoes.css'
 import topImg from '../../assets/webImg/feelYourShoes.jpg'
-import HighlightSection from '../highlightSection/HighlightSection'
 
 function BannerFeelYourShoes() {
   return (
