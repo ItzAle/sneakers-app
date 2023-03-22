@@ -4,7 +4,7 @@ import './BannerCircularity.css'
 
 function BannerCircularity() {
   return (
-    <div className='bannerCircularity'>
+    <div className='bannerCircularity' id='circularity'>
       <div className='circularityImgBox'>
         <img id='imgCircularity' src={Image} alt="Oa"/>
       </div>

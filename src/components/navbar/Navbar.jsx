@@ -43,9 +43,9 @@ function Navbar() {
           <h1 className="nav_logo">GALACTICA</h1>
         </Link>
         <div className="nav_links">
-          <Link to={"#"}>OUR TEAM</Link>
+          <Link to={"/"}> OUR TEAM</Link>
           <Link to={"/shop"}>SHOP</Link>
-          <Link to={"/admin"}>CIRCULARITY</Link>
+          <Link to={"/"}> CIRCULARITY</Link>
           <Link to={"/"}>FAQS</Link>
           <Link to={"/"}>LOG IN</Link>
           <Link to={"/admin"}>ADMIN</Link>

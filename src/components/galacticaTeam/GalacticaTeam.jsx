@@ -7,7 +7,7 @@ import './GalacticaTeam.css'
 
 function GalacticaTeam() {
   return (
-    <div className='galacticaTeam'>
+    <div className='galacticaTeam' id='ourTeam'>
       <div className='worker'>
         <p className='workerName bold'>AMANDA MCONNOR</p>
         <img className='workerImg'src={amanda} alt='Amanda Mconnor'/>
