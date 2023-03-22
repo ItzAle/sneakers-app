@@ -143,7 +143,7 @@ function AddForm() {
                             hacerlo con un checkbox
                         /> */}
   
-                    <button className='roundBlackBtn' id='addFormBtn' onClick={handleSubmit}>Add product</button>
+                    <button className='roundBlackBtn' id='addFormBtn' onClick={handleSubmit} type="submit">Add product</button>
                 </form>
             </div>
         </div>
