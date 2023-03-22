@@ -10,7 +10,6 @@ function AddForm() {
         name : "",
         id : "",
     };
-
     const sneakerModel = {
         brand : "",
         model : "",
@@ -33,7 +32,6 @@ function AddForm() {
         const form = document.querySelector('.addForm')
         form.style.display = 'block';
     }
-    
     const hideForm = () => {
         const form = document.querySelector('.addForm')
         form.style.display = 'none';
@@ -46,7 +44,6 @@ function AddForm() {
             [name] : e.target.value 
         })
     }
-    
     const handleCategoryChange = (e) =>{
         const id =  e.target.name;
         setSneaker({
@@ -54,7 +51,6 @@ function AddForm() {
             [id] : e.target.value
         })
     } 
-
     const handleSubmit = (e) =>{
         e.preventDefault();
         SneakersServices.addSneaker(sneaker)
@@ -68,9 +64,8 @@ function AddForm() {
             <div className='addForm'>
                 <AiOutlineClose className='closeForm' onClick={hideForm}/>
                 <p className='titleForm'>To add a product, the following information is requested:</p>
-                
                 {categories && categories[0].name}
-
+                {/* al poner esto se imprime la primera categoria */}
                 <form className='dataForm'>
                     <label for="brandForm">Product brand:</label>
                         <input 
@@ -122,17 +117,6 @@ function AddForm() {
                             value={sneaker.description}
                             onChange={handleSneakerChange}
                         />
-                    {/* <label for="highlightForm">Is this product a highlight? Answer with true or false:</label>
-                        <input 
-                            name='highlight'
-                            type="text" 
-                            id="highlightForm" 
-                            className='inputForm' 
-                            placeholder='True or False'
-                            value={sneaker.highlights}
-                            onChange={handleSneakerChange}
-                            check
-                        /> */}
                     <label for="categoryForm">Product category:</label>
                         <select 
                             name='categoryId'
@@ -144,16 +128,22 @@ function AddForm() {
                             {categories.map(categoryName=>{
                                 return (
                                     <option value={categoryName.id} key={categoryName.id}>{categoryName.name}</option>
-                                )
-                            })}
+                                    )
+                                })}
                         </select>
-                    <button 
-                        className='roundBlackBtn' 
-                        id='addFormBtn'
-                        onClick={handleSubmit}
-                    >
-                        Add product
-                    </button>
+                    {/* <label for="highlightForm">Is this product a highlight?:</label>
+                        <input 
+                            name='highlight'
+                            type="text" 
+                            id="highlightForm" 
+                            className='inputForm' 
+                            value={sneaker.highlights}
+                            onChange={handleSneakerChange}
+
+                            hacerlo con un checkbox
+                        /> */}
+  
+                    <button className='roundBlackBtn' id='addFormBtn' onClick={handleSubmit} type="submit">Add product</button>
                 </form>
             </div>
         </div>

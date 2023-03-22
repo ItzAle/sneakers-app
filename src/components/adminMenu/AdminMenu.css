@@ -1,55 +1,25 @@
 .menu{
-    display: flex;
-    flex-direction: column;
     padding-top: 15vh;
+    margin: 0 10px;
 }
-#adminMenu{
+.adminMenu{
     display: flex;
-    justify-content: space-evenly;  
-}
-.userDetails{
-    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
 }
 .adminMenuIcons{
-    margin-right: 10px;
+    margin-right: 5px;
     font-size: 15px;
 }
 @media (min-width: 1100px){
     .menu{
-        flex-direction: row;
         padding-top: 0vh;
-        margin: auto;
-        width: 96%;
-        border: 1px solid red;
+        margin: 0 25px;
     }
-    .menuBox{
-        border: 1px solid purple;
-        width: 25%;
-    }
-    #adminMenu{
-        flex-direction: column;
+    .adminMenu{
         justify-content: flex-start;
         gap: 20px;
-        border: 1px solid greenyellow;
     }
-    .userDetails{
-        display: flex;
-        margin: 0 0 15px;
-        gap: 7px;
-        border: 1px solid blue;
-    }
-    .userPic{
-        background-color: lightgray;
-        color: white;
-        border-radius: 5em;
-        width: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 25px;
-    }
-    .menuContent{
-        width: 100%;
-    }
-    
 }

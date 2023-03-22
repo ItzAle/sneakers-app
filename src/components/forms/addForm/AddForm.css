@@ -1,6 +1,15 @@
+.addItem{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+#addItemBtn{
+    padding: 5px 15px;
+    width: 110px;
+    border-radius: 1em;
+}
 .addForm{
     background-color: white;
-    height: 70vh;
     width: 90vw;
     position: absolute;
     top: 103px;
@@ -21,15 +30,7 @@
 }
 #addFormBtn{
     width: 150px;
-    margin-top: 50px;
-}
-.addItem{
-    display: flex;
-    justify-content: flex-end;
-    margin: 20px 0;
-}
-#addItemBtn{
-    padding: 5px 15px;
+    margin-top: 30px;
 }
 @media (min-width: 1100px){
     .addForm{
@@ -39,9 +40,5 @@
     }
     #addFormBtn{
         margin-top: 20px;
-    }
-    .addItem{
-        justify-content: flex-start;
-        margin: 0 0 20px;
     }
 }

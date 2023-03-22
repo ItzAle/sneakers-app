@@ -1,16 +1,14 @@
-.dashBoard{
-    margin: 10px;
-}
 .dashBoardRow{
     display: grid;
     grid-template-columns: 120px repeat(2, 1fr) repeat(3, 30px);
-    height: 40px;
+    height: 45px;
+    padding: 0 5px;
     align-items: center;
+    background-color: rgb(189, 189, 189);
 }
-.type1{
-    background-color: rgb(239, 239, 239);
-    margin-bottom: 5px;
-}
+.dashBoardRow:nth-child(even) {
+        background-color: rgb(223, 223, 223);
+    }
 @media (min-width: 1100px){
     .dashBoardRow{
         grid-template-columns: repeat(3, 1fr) repeat(3, 30px);
