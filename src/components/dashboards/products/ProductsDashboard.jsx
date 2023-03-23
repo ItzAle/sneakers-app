@@ -11,9 +11,8 @@ function Dashboard() {
 
   useEffect(()=>{
     SneakersServices.getAllSneakers()
-      .then((data)=>{setSneakers(data)
-      
-    })},[]);
+      .then((data)=>{setSneakers(data)})
+    },[]);
 
   return (
     <div className='dashBoard'>

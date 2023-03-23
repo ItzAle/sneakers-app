@@ -64,8 +64,6 @@ function AddForm() {
             <div className='addForm'>
                 <AiOutlineClose className='closeForm' onClick={hideForm}/>
                 <p className='titleForm'>To add a product, the following information is requested:</p>
-                {categories && categories[0].name}
-                {/* al poner esto se imprime la primera categoria */}
                 <form className='dataForm'>
                     <label for="brandForm">Product brand:</label>
                         <input 
