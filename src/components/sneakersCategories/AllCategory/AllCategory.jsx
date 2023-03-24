@@ -3,19 +3,19 @@ import { Icon } from '@iconify/react';
 import SneakersServices from '../../../apiServices/SneakersServices'
 import { Link } from 'react-router-dom'
 
-function KidCategory() {
+function AllCategory() {
 
-  const [kidSneakers, setKidSneakers] = useState([]);
+    const [sneakers, setSneakers] = useState([]);
+    const [heart, setHeart] = useState(true);
 
-  useEffect(() => {
-    SneakersServices.getKidSneakers()
-      .then((data) => { setKidSneakers(data) })
-      .then((data) => { console.log(data); })
-  }, []);
+    useEffect(() => {
+        SneakersServices.getAllSneakers()
+            .then((data) => { setSneakers(data) })
+    }, []);
 
   return (
     <>
-     {kidSneakers.map((item) =>{
+     {sneakers.map((item) =>{
         return(
           <div className='productCard'>
             <Icon icon="mdi:cards-heart" className='iconHeart' />
@@ -39,4 +39,4 @@ function KidCategory() {
   )
 }
 
-export default KidCategory
+export default AllCategory
