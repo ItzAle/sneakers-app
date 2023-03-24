@@ -5,26 +5,18 @@ import "./HighlightSection.css"
 
 function HighlightSection() {
 
-    const [sneakers, setSneakers] = useState([])
+  const [highLights, setHighLights] = useState([])
 
   useEffect(()=>{
-    SneakersServices.getAllSneakers()
-      .then((data)=>{setSneakers(data)
-    })},[]);
+    SneakersServices.findAllHighLights()
+    .then((data)=>{setHighLights(data)})
+    .then((data)=>{console.log(data)})
 
-  const isHighlight = (sneaker) => {
-    for(let i = 0; i < sneakers.length; i++){
-      if(!sneaker.highlights){
-        return false
-      }
-      return sneaker
-    }
-  }
-  const newSneakerArray = sneakers.filter(isHighlight);
-
+  },[]);
+  
   return (
     <div className='highlightSection'>
-    {newSneakerArray.map((item)=>{
+    {highLights.map((item)=>{
       return(
         <Link to={`/infoShoe/${item.id}`}>
           <div className='highlightCard'>

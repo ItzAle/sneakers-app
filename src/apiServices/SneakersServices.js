@@ -9,6 +9,12 @@ const SneakersServices = {
             .catch((err)=>console.log(err))
     },
 
+    findAllHighLights() {
+        return axios.get(url + `/highlights`)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
+    },
+
     getAllSneakersCategories() {
         return axios.get(url + `/categories`)
             .then((res)=>res.data)

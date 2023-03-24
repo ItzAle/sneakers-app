@@ -13,26 +13,24 @@ export default function ShopPage() {
 
   useEffect(()=>{
     SneakersServices.getAllSneakers()
-      .then((data)=>{setSneakers(data)
+      .then((data)=>{setSneakers(data)})
         // .then((data)=>{console.log(data)
-
-    })},[]);
+    },[]);
 
   return (
     <>
     <Navbar/>
-    <div className='CategorySelect'>
+    <div className='categorySelect'>
       <Link to="/shop"><p className='options'>All Categories</p></Link>
       <Link to="/"><p className='options'>Adults</p></Link>
       <Link to="/"><p className='options'>Kids</p></Link>
     </div>
-    <div className='lineBlack'></div>
     <div className='shopPage'>
       {sneakers.map((item) =>{
         return(
           <div className='productCard'>
-            <Icon icon="mdi:cards-heart" width="29" height="29" className='iconHeart' />
-            <Icon icon="material-symbols:shopping-cart-checkout"  width="31" height="31" className='iconShop' />
+            <Icon icon="mdi:cards-heart" className='iconHeart' />
+            <Icon icon="material-symbols:shopping-cart-checkout" className='iconShop' />
             <Link to={`/infoShoe/${item.id}`}>
               <div className='imgBox'>
                 <img className='productImg' src={item.img} alt="Product" />

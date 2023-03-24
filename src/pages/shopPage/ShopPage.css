@@ -6,7 +6,8 @@ a{
     padding-bottom: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 15px;
+    margin: auto;
+    width: 90%;
     gap: 10px;
 }
 .productCard{
@@ -24,6 +25,8 @@ a{
     top: 5%;
     right: 9%;
     color: gray;
+    width: 29px; 
+    height: 29px;
 }
 .iconHeart:hover{
     color: rgb(173, 1, 1);
@@ -34,6 +37,8 @@ a{
     top: 16%;
     right: 8%;
     color: gray;
+    width: 31px; 
+    height: 31px;
 }
 .iconShop:hover{
     color: black;
@@ -55,41 +60,32 @@ a{
 .price{
     text-align: right;
 }
-.CategorySelect{
-    padding-top: 15vh;
-    width: 100%;
+.categorySelect{
+    padding: 15vh 0 2vh;
+    width: 90%;
     display: flex;
-    gap: 25px;
-    padding-left: 10px;
+    gap: 20px;
     font-weight: 500;
-}
-.lineBlack{
-    height: 1px;
-    background-color: black;
-    width: 95%;
-    margin: 10px auto 15px auto;
+    border-bottom: 1px solid black;
+    margin: 0 auto 20px;
 }
 
 @media (min-width: 1100px){
     .shopPage{
         padding-top: 30px;
+        width: 95%;
         grid-template-columns: repeat(5, 1fr);
     }
-    .CategorySelect{
+    .categorySelect{
         padding-top: 0;
-        width: 100%;
+        width: 95%;
         display: flex;
         gap: 25px;
-        padding-left: 20px;
         font-size: 1.1em;
     }
     .options:hover{
         color: rgb(85, 85, 85);
-        cursor: pointer;
-        
-    }
-    .lineBlack{
-        width: 97%;
+        cursor: pointer; 
     }
     .iconHeart{
         top: 6%;
