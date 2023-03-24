@@ -14,7 +14,6 @@ export default function ShopPage() {
   useEffect(()=>{
     SneakersServices.getAllSneakers()
       .then((data)=>{setSneakers(data)})
-        // .then((data)=>{console.log(data)
     },[]);
 
   return (
