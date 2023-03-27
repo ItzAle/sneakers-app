@@ -36,7 +36,7 @@ function AddForm() {
         const form = document.querySelector('.addForm')
         form.style.display = 'none';
     }
-
+adwainidfa
     const handleSneakerChange = (e) =>{
         let name = e.target.name;
         setSneaker({ 
