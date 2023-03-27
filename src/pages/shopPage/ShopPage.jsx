@@ -2,8 +2,8 @@ import './ShopPage.css'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/footer'
 import { Link} from 'react-router-dom'
-// import AllCategory from '../../components/sneakersCategories/AllCategory/AllCategory'
-// import AdultCategory from '../../components/sneakersCategories/adultCategory/adultCategory'
+import AllCategory from '../../components/sneakersCategories/AllCategory/AllCategory'
+import AdultCategory from '../../components/sneakersCategories/adultCategory/adultCategory'
 import KidCategory from '../../components/sneakersCategories/kidCategory/kidCategory'
 
 export default function ShopPage() {
