@@ -10,20 +10,18 @@ function HighlightSection() {
   useEffect(()=>{
     SneakersServices.findAllHighLights()
     .then((data)=>{setHighLights(data)})
-    .then((data)=>{console.log(data)})
-
   },[]);
   
   return (
     <div className='highlightSection'>
     {highLights.map((item)=>{
       return(
-        <Link to={`/infoShoe/${item.id}`}>
-          <div className='highlightCard'>
+        <Link to={`/infoShoe/${item.id}`} key={item.id}>
+          <div className='highlightCard' >
             <img src={item.img} alt="Sneacker" className='highlightImg'/>
-            <div className='highlightData'>
+            <div className='highlightData' >
               <p className='highlightModel'>{item.model}</p>
-              <div className='highlightInfo'>
+              <div className='highlightInfo' >
                 <p className='highlightPrice'>{item.price} €</p>
                 <button className='roundTransparentBtn blackBorder buttonShop'>SHOP</button>
               </div>

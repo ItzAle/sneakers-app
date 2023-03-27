@@ -27,10 +27,16 @@
 .inputForm{
     border: black 1px solid;
     border-radius: 0.5em;
+    height: 25px;
 }
 #addFormBtn{
     width: 150px;
-    margin-top: 30px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+.FormSpace{
+    padding: 2px 0;
 }
 @media (min-width: 1100px){
     .addForm{

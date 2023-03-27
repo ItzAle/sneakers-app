@@ -55,9 +55,6 @@ function AddForm() {
         e.preventDefault();
         SneakersServices.addSneaker(sneaker)
     }
-    
-    console.log(sneaker);
-
     return (
         <div className='addItem'>
             <button className='roundBlackBtn' id='addItemBtn' onClick={showForm}>Add</button>
@@ -65,7 +62,7 @@ function AddForm() {
                 <AiOutlineClose className='closeForm' onClick={hideForm}/>
                 <p className='titleForm'>To add a product, the following information is requested:</p>
                 <form className='dataForm'>
-                    <label for="brandForm">Product brand:</label>
+                    <label htmlFor="brandForm" className = "FormSpace">Product brand:</label>
                         <input 
                             name='brand'
                             type="text" 
@@ -75,7 +72,7 @@ function AddForm() {
                             value={sneaker.brand}
                             onChange={handleSneakerChange}
                         />
-                    <label for="modelForm">Product model:</label>
+                    <label htmlFor="modelForm" className = "FormSpace">Product model:</label>
                         <input 
                             name='model'
                             type="text" 
@@ -85,7 +82,7 @@ function AddForm() {
                             value={sneaker.model}
                             onChange={handleSneakerChange}
                         />
-                    <label for="priceForm">Product price:</label>
+                    <label htmlFor="priceForm" className = "FormSpace">Product price:</label>
                         <input 
                             name='price'
                             type="text" 
@@ -95,7 +92,7 @@ function AddForm() {
                             value={sneaker.price}
                             onChange={handleSneakerChange}
                         />
-                    <label for="imgForm">Product image:</label>
+                    <label htmlFor="imgForm" className = "FormSpace">Product image:</label>
                         <input 
                             name='img'
                             type="text" 
@@ -105,7 +102,7 @@ function AddForm() {
                             value={sneaker.img}
                             onChange={handleSneakerChange}
                         />
-                    <label for="descriptionForm">Product description:</label>
+                    <label htmlFor="descriptionForm" className = "FormSpace">Product description:</label>
                         <input 
                             name='description'
                             type="text" 
@@ -115,7 +112,7 @@ function AddForm() {
                             value={sneaker.description}
                             onChange={handleSneakerChange}
                         />
-                    <label for="categoryForm">Product category:</label>
+                    <label htmlFor="categoryForm" className = "FormSpace">Product category:</label>
                         <select 
                             name='categoryId'
                             value={sneaker.categoryId}
@@ -129,19 +126,25 @@ function AddForm() {
                                     )
                                 })}
                         </select>
-                    {/* <label for="highlightForm">Is this product a highlight?:</label>
-                        <input 
+                    <label htmlFor="highlightForm" className = "FormSpace">Is this product a highlight?:</label>
+                        <select 
                             name='highlight'
                             type="text" 
                             id="highlightForm" 
                             className='inputForm' 
                             value={sneaker.highlights}
                             onChange={handleSneakerChange}
-
-                            hacerlo con un checkbox
-                        /> */}
-  
-                    <button className='roundBlackBtn' id='addFormBtn' onClick={handleSubmit} type="submit">Add product</button>
+                        >
+                            <option value= {true}> Yes </option>
+                            <option value= {false}> No </option>
+                        </select>
+                    <button
+                        className='roundBlackBtn'
+                        id='addFormBtn'
+                        onClick={handleSubmit}
+                        type="submit">
+                        Add product
+                    </button>
                 </form>
             </div>
         </div>

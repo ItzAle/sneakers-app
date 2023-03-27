@@ -9,7 +9,7 @@ import { Icon } from '@iconify/react';
 export default function ShopPage() {
 
   const [sneakers, setSneakers] = useState([]);
-  const [heart, setHeart] = useState (true);
+  // const [heart, setHeart] = useState (true);
 
   useEffect(()=>{
     SneakersServices.getAllSneakers()
@@ -27,7 +27,7 @@ export default function ShopPage() {
     <div className='shopPage'>
       {sneakers.map((item) =>{
         return(
-          <div className='productCard'>
+          <div className='productCard' key={item.id}>
             <Icon icon="mdi:cards-heart" className='iconHeart' />
             <Icon icon="material-symbols:shopping-cart-checkout" className='iconShop' />
             <Link to={`/infoShoe/${item.id}`}>
