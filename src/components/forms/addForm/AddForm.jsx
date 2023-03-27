@@ -54,6 +54,8 @@ function AddForm() {
     const handleSubmit = (e) =>{
         e.preventDefault();
         SneakersServices.addSneaker(sneaker)
+        hideForm();
+        document.location.reload();
     }
     return (
         <div className='addItem'>
