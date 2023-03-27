@@ -21,7 +21,7 @@ function AddForm() {
     }
 
     const [categories, setCategories] = useState([categoryModel]);
-    const [sneaker, setSneaker] = useState([sneakerModel]);
+    const [sneaker, setSneaker] = useState(sneakerModel);
 
     useEffect(()=>{
         SneakersServices.getAllSneakersCategories()
@@ -57,6 +57,7 @@ function AddForm() {
         hideForm();
         document.location.reload();
     }
+    console.log(sneaker);
     return (
         <div className='addItem'>
             <button className='roundBlackBtn' id='addItemBtn' onClick={showForm}>Add</button>
