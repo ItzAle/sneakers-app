@@ -34,7 +34,7 @@ Next, it is necessary to install the dependencies:
 ```
 npm install
 ```
-Finally, in order to run this project, it is necessary to compile the database first. This is the address of the database repository (back-end) with the necessary instructions. Once done, we can start the project:
+Finally, in order to run this project, it is necessary to compile the database first. [This is the address of the database repository (back-end)](https://github.com/CarlosJavierVilla/Api-FullStack-Application) with the necessary instructions. Once done, we can start the project:
 ```
 npm start
 ```
@@ -87,7 +87,7 @@ A continuación es necesario installar las depencias:
 ```
 npm install
 ```
-Por último, para poder ejecutar este proyecto es necesario compilar primero la base de datos. Esta es la dirección del repositotio de la base de datos (back-end) con las indicaciones necesarias. Una vez hecho, ya podemos iniciar el proyecto:
+Por último, para poder ejecutar este proyecto es necesario compilar primero la base de datos. Esta es la [dirección del repositotio de la base de datos (back-end)](https://github.com/CarlosJavierVilla/Api-FullStack-Application) con las indicaciones necesarias. Una vez hecho, ya podemos iniciar el proyecto:
 ```
 npm start
 ```
