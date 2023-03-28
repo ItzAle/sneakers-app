@@ -3,16 +3,24 @@ import React, { useEffect, useState } from 'react'
 import SneakersServices from '../../../apiServices/SneakersServices'
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import AddForm from '../../forms/addForm/AddForm';
-
+import { useParams} from 'react-router-dom'
 
 function Dashboard() {
   
   const [sneakers, setSneakers] = useState([])
-
   useEffect(()=>{
     SneakersServices.getAllSneakers()
       .then((data)=>{setSneakers(data)})
     },[]);
+
+  const [isDeleted, setIsDeleted] = useState(false);
+  const { id } = useParams();
+
+  const handleDelete = () => {
+    SneakersServices.deleteSneaker(id)
+      .then(() => setIsDeleted(true))
+      .catch((error) => {console.log(error);});
+  };
 
   return (
     <div className='dashBoard'>
@@ -25,7 +33,7 @@ function Dashboard() {
             <p className='itemPrice'>{item.price}€</p>
             <p className='itemQuantity'>1</p>
             <FaPencilAlt/>
-            <FaTrashAlt/>
+            <FaTrashAlt key={item.id} onClick={() => handleDelete(item.id)}/>
           </div>
         )
       })}
