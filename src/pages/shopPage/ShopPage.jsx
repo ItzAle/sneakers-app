@@ -21,14 +21,19 @@ export default function ShopPage() {
       .then((data)=>{setCategories(data)})
     },[])
 
+    const showItems = () => {
+
+    }
+
     // const [sneakersByCategory, setSneakersByCategory] = useState([]);
     // const {id} = useParams()
     // useEffect(()=>{
-    //   SneakersServices.findSneakersByCategory(id)
+    //   SneakersServices.findSneakersByCategory(1)
     //   .then((data)=>{setSneakersByCategory(data)})
     //   },[])
 
     //   console.log(sneakersByCategory);
+    
   return (
     <>
     <Navbar/>

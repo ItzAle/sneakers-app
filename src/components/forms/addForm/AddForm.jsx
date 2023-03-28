@@ -58,6 +58,7 @@ function AddForm() {
         document.location.reload();
     }
     console.log(sneaker);
+
     return (
         <div className='addItem'>
             <button className='roundBlackBtn' id='addItemBtn' onClick={showForm}>Add</button>
@@ -131,15 +132,14 @@ function AddForm() {
                         </select>
                     <label htmlFor="highlightForm" className = "FormSpace">Is this product a highlight?:</label>
                         <select 
-                            name='highlight'
-                            type="text" 
+                            name='highlights'
                             id="highlightForm" 
                             className='inputForm' 
                             value={sneaker.highlights}
                             onChange={handleSneakerChange}
                         >
-                            <option value= {true}> Yes </option>
-                            <option value= {false}> No </option>
+                            <option value={false}>No</option>
+                            <option value={true}>Yes</option>
                         </select>
                     <button
                         className='roundBlackBtn'
