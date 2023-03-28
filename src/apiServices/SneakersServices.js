@@ -21,14 +21,8 @@ const SneakersServices = {
             .catch((err)=>console.log(err))
     },
 
-    getAdultSneakers() {
-        return axios.get(url + `/category/adult`)
-            .then((res)=>res.data)
-            .catch((err)=>console.log(err))
-    },
-
-    getKidSneakers() {
-        return axios.get(url + `/category/kid`)
+    findSneakersByCategory(id){
+        return axios.get(url + `/categories/${id}`)
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
     },

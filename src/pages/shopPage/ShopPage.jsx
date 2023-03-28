@@ -3,26 +3,42 @@ import './ShopPage.css'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/footer'
 import SneakersServices from '../../apiServices/SneakersServices'
+import { useParams} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react';
 
 export default function ShopPage() {
 
-  const [sneakers, setSneakers] = useState([]);
-  // const [heart, setHeart] = useState (true);
+    const [sneakers, setSneakers] = useState([]);
+    useEffect(()=>{
+      SneakersServices.getAllSneakers()
+        .then((data)=>{setSneakers(data)})
+      },[]);
 
-  useEffect(()=>{
-    SneakersServices.getAllSneakers()
-      .then((data)=>{setSneakers(data)})
-    },[]);
+    const [categories, setCategories] = useState([]);
+    useEffect(()=>{
+      SneakersServices.getAllSneakersCategories()
+      .then((data)=>{setCategories(data)})
+    },[])
 
+    // const [sneakersByCategory, setSneakersByCategory] = useState([]);
+    // const {id} = useParams()
+    // useEffect(()=>{
+    //   SneakersServices.findSneakersByCategory(id)
+    //   .then((data)=>{setSneakersByCategory(data)})
+    //   },[])
+
+    //   console.log(sneakersByCategory);
   return (
     <>
     <Navbar/>
     <div className='categorySelect'>
       <Link to="/shop"><p className='options'>All Categories</p></Link>
-      <Link to="/"><p className='options'>Adults</p></Link>
-      <Link to="/"><p className='options'>Kids</p></Link>
+      {categories.map((item)=>{
+        return(
+          <p className='options' key={item.id}>{item.name}</p>
+        )
+      })}
     </div>
     <div className='shopPage'>
       {sneakers.map((item) =>{
