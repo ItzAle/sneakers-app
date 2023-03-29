@@ -24,6 +24,10 @@ function Dashboard() {
       });
   };
 
+  const handleChange = (id) => {
+    console.log("test");
+  };
+
   return (
     <div className="dashBoard">
       <AddForm />
@@ -34,7 +38,7 @@ function Dashboard() {
             <p className="itemBrand">{item.brand}</p>
             <p className="itemPrice">{item.price}€</p>
             <p className="itemQuantity">1</p>
-            <FaPencilAlt />
+            <FaPencilAlt onClick={() => handleChange(item.id)} />
             <FaTrashAlt onClick={() => handleDelete(item.id)} />
           </div>
         );
