@@ -13,14 +13,11 @@ function Dashboard() {
     });
   }, []);
 
-
-
   const [showOrHideForm, setShowOrHideForm] = useState(false);
   const changeFormState = () =>{
       setShowOrHideForm(!showOrHideForm)
   }
   console.log(showOrHideForm);
-
 
   const [isDeleted, setIsDeleted] = useState(false);
   const handleDelete = (id) => {
