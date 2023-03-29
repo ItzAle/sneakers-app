@@ -24,12 +24,6 @@ function Dashboard() {
       });
   };
 
-  // const handleDelete = async (idToDelete) => {
-  //   await SneakersServices.deleteSneaker(idToDelete);
-  //   let newSneakers = sneakers.filter((item) => item.id !== idToDelete);
-  //   setSneakers(newSneakers);
-  // }
-
   return (
     <div className="dashBoard">
       <AddForm />
