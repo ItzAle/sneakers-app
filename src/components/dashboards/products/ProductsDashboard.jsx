@@ -29,9 +29,19 @@ function Dashboard() {
       });
   };
 
-  const handleChange = (id) => {
+  const [update, setUpdate] = useState([]);
+  const handleChange = (id, changes) => {
+    SneakersServices.editSneaker(id, changes)
+      .then(() => setUpdate())
+      .catch((error) => {
+        console.log(error);
+      });
     console.log("test");
   };
+  // const editForm = () => {
+  //   changeFormState()
+  //   handleChange()
+  // }
 
   return (
     <div className="dashBoard">
@@ -50,7 +60,8 @@ function Dashboard() {
             <p className="itemBrand">{item.brand}</p>
             <p className="itemPrice">{item.price}€</p>
             <p className="itemQuantity">1</p>
-            <FaPencilAlt onClick={changeFormState} />
+            {/* <FaPencilAlt onClick={() => editForm(item.id)} /> */}
+            <FaPencilAlt onClick={() => handleChange(item.id)} />
             <FaTrashAlt onClick={() => handleDelete(item.id)} />
           </div>
         );
