@@ -13,8 +13,16 @@ function Dashboard() {
     });
   }, []);
 
-  const [isDeleted, setIsDeleted] = useState(false);
 
+
+  const [showOrHideForm, setShowOrHideForm] = useState(false);
+  const changeFormState = () =>{
+      setShowOrHideForm(!showOrHideForm)
+  }
+  console.log(showOrHideForm);
+
+
+  const [isDeleted, setIsDeleted] = useState(false);
   const handleDelete = (id) => {
     SneakersServices.deleteSneaker(id)
       .then(() => setIsDeleted(true))
@@ -30,7 +38,14 @@ function Dashboard() {
 
   return (
     <div className="dashBoard">
-      <AddForm />
+
+      {showOrHideForm === false ? '' : <AddForm changeFormState={changeFormState}/>}
+
+      <div className="addItem">
+        <button className='roundBlackBtn' id='addItemBtn' onClick={changeFormState}>Add</button>
+      </div>
+
+
       {sneakers.map((item) => {
         return (
           <div className="dashBoardRow" key={item.id}>
@@ -38,7 +53,7 @@ function Dashboard() {
             <p className="itemBrand">{item.brand}</p>
             <p className="itemPrice">{item.price}€</p>
             <p className="itemQuantity">1</p>
-            <FaPencilAlt onClick={() => handleChange(item.id)} />
+            <FaPencilAlt onClick={changeFormState} />
             <FaTrashAlt onClick={() => handleDelete(item.id)} />
           </div>
         );

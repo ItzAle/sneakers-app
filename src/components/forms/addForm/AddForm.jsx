@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import "./AddForm.css";
 
 
-function AddForm() {
+function AddForm({changeFormState}) {
 
     const categoryModel = {
         name : "",
@@ -28,15 +28,6 @@ function AddForm() {
           .then((data)=>{setCategories(data)})
         },[]);
 
-    const showForm = () =>{
-        const form = document.querySelector('.addForm')
-        form.style.display = 'block';
-    }
-    const hideForm = () => {
-        const form = document.querySelector('.addForm')
-        form.style.display = 'none';
-    }
-
     const handleSneakerChange = (e) =>{
         let name = e.target.name;
         setSneaker({ 
@@ -54,16 +45,15 @@ function AddForm() {
     const handleSubmit = (e) =>{
         e.preventDefault();
         SneakersServices.addSneaker(sneaker)
-        hideForm();
         document.location.reload();
     }
     console.log(sneaker);
 
     return (
         <div className='addItem'>
-            <button className='roundBlackBtn' id='addItemBtn' onClick={showForm}>Add</button>
             <div className='addForm'>
-                <AiOutlineClose className='closeForm' onClick={hideForm}/>
+                <AiOutlineClose className='closeForm' onClick={changeFormState}/>
+
                 <p className='titleForm'>To add a product, the following information is requested:</p>
                 <form className='dataForm'>
                     <label htmlFor="brandForm" className = "FormSpace">Product brand:</label>
