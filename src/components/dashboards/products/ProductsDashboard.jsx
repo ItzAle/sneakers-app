@@ -31,6 +31,7 @@ function Dashboard() {
 
   const [update, setUpdate] = useState([]);
   const handleChange = (id, changes) => {
+    changeFormState()
     SneakersServices.editSneaker(id, changes)
       .then(() => setUpdate())
       .catch((error) => {
