@@ -16,11 +16,12 @@ function Dashboard() {
   const [isDeleted, setIsDeleted] = useState(false);
   const { id } = useParams();
 
-  const handleDelete = () => {
+  const handleDelete = (id) => {
     SneakersServices.deleteSneaker(id)
       .then(() => setIsDeleted(true))
       .catch((error) => {console.log(error);});
   };
+
 
   return (
     <div className='dashBoard'>
@@ -33,11 +34,10 @@ function Dashboard() {
             <p className='itemPrice'>{item.price}€</p>
             <p className='itemQuantity'>1</p>
             <FaPencilAlt/>
-            <FaTrashAlt key={item.id} onClick={() => handleDelete(item.id)}/>
+            <FaTrashAlt onClick={handleDelete}/>
           </div>
         )
       })}
-
     </div>
   )
 }
