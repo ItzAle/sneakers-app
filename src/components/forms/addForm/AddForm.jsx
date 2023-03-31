@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import "./AddForm.css";
 
 
-function AddForm({changeFormState}) {
+function AddForm({changeFormState, data, setData}) {
 
     const categoryModel = {
         name : "",
@@ -44,9 +44,20 @@ function AddForm({changeFormState}) {
     } 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        SneakersServices.addSneaker(sneaker)
+        if (data === '') { 
+            SneakersServices.editSneaker(data, sneaker)
+            setData(null);
+        } else { 
+            SneakersServices.addSneaker(sneaker)
+        }
         document.location.reload();
     }
+    // const handleSubmit = (e, data) =>{
+    //     if(data == ''){
+    //         e.preventDefault();
+    //     SneakersServices.addSneaker(sneaker)}
+    //     document.location.reload();
+    // }
     console.log(sneaker);
 
     return (
@@ -63,7 +74,7 @@ function AddForm({changeFormState}) {
                             id="brandForm" 
                             className='inputForm' 
                             placeholder='Brand'
-                            value={sneaker.brand}
+                            value={data == '' ? sneaker.brand : data.brand}
                             onChange={handleSneakerChange}
                         />
                     <label htmlFor="modelForm" className = "FormSpace">Product model:</label>
@@ -73,7 +84,7 @@ function AddForm({changeFormState}) {
                             id="modelForm" 
                             className='inputForm' 
                             placeholder='Model'
-                            value={sneaker.model}
+                            value={data == '' ? sneaker.model : data.model}
                             onChange={handleSneakerChange}
                         />
                     <label htmlFor="priceForm" className = "FormSpace">Product price:</label>
@@ -83,7 +94,7 @@ function AddForm({changeFormState}) {
                             id="priceForm" 
                             className='inputForm' 
                             placeholder='Price'
-                            value={sneaker.price}
+                            value={data == '' ? sneaker.price : data.price}
                             onChange={handleSneakerChange}
                         />
                     <label htmlFor="imgForm" className = "FormSpace">Product image:</label>
@@ -93,7 +104,7 @@ function AddForm({changeFormState}) {
                             id="imgForm" 
                             className='inputForm' 
                             placeholder='Url'
-                            value={sneaker.img}
+                            value={data == '' ? sneaker.img : data.img}
                             onChange={handleSneakerChange}
                         />
                     <label htmlFor="descriptionForm" className = "FormSpace">Product description:</label>
@@ -103,7 +114,7 @@ function AddForm({changeFormState}) {
                             id="descriptionForm" 
                             className='inputForm' 
                             placeholder='Description'
-                            value={sneaker.description}
+                            value={data == '' ? sneaker.description : data.description}
                             onChange={handleSneakerChange}
                         />
                     <label htmlFor="categoryForm" className = "FormSpace">Product category:</label>

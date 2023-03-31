@@ -17,7 +17,7 @@ function Dashboard() {
   const changeFormState = () =>{
       setShowOrHideForm(!showOrHideForm)
   }
-  console.log(showOrHideForm);
+  // console.log(showOrHideForm);
 
   const [isDeleted, setIsDeleted] = useState(false);
   const handleDelete = (id) => {
@@ -32,20 +32,19 @@ function Dashboard() {
   const [update, setUpdate] = useState([]);
   const handleChange = (id) => {
     changeFormState()
-    console.log(id);
     
-    // SneakersServices.editSneaker(id, changes)
-    //   .then(() => setUpdate())
-    //   .catch((error) => {
-      //     console.log(error);
-      //   });
+    SneakersServices.getSneakerById(id)
+      .then((data) => setUpdate(data))
+      .catch((error) => {
+          console.log(error);
+        });
     };
-  
+  console.log(update);
 
   return (
     <div className="dashBoard">
 
-      {showOrHideForm === false ? '' : <AddForm changeFormState={changeFormState}/>}
+      {showOrHideForm === false ? '' : <AddForm data={update} setData={setUpdate}changeFormState={changeFormState}/>}
 
       <div className="addItem">
         <button className='roundBlackBtn' id='addItemBtn' onClick={changeFormState}>Add</button>
