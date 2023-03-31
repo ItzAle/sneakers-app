@@ -32,14 +32,14 @@ function Dashboard() {
   const [update, setUpdate] = useState([]);
   const handleChange = (id) => {
     changeFormState()
-
+    console.log(id);
+    
     // SneakersServices.editSneaker(id, changes)
     //   .then(() => setUpdate())
     //   .catch((error) => {
-    //     console.log(error);
-    //   });
-    console.log(id);
-  };
+      //     console.log(error);
+      //   });
+    };
   
 
   return (
