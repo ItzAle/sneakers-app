@@ -44,7 +44,6 @@ function Dashboard() {
         <button className='roundBlackBtn' id='addItemBtn' onClick={changeFormState}>Add</button>
       </div>
 
-
       {sneakers.map((item) => {
         return (
           <div className="dashBoardRow" key={item.id}>
