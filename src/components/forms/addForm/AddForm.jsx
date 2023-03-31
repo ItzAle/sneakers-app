@@ -54,7 +54,7 @@ function AddForm({changeFormState}) {
             <div className='addForm'>
                 <AiOutlineClose className='closeForm' onClick={changeFormState}/>
 
-                <p className='titleForm'>To add a product, the following information is requested:</p>
+                <p className='titleForm'>To add or edit a product, the following information is requested:</p>
                 <form className='dataForm'>
                     <label htmlFor="brandForm" className = "FormSpace">Product brand:</label>
                         <input 
@@ -136,7 +136,7 @@ function AddForm({changeFormState}) {
                         id='addFormBtn'
                         onClick={handleSubmit}
                         type="submit">
-                        Add product
+                        Send
                     </button>
                 </form>
             </div>
