@@ -1,7 +1,6 @@
 import React from 'react'
 import './Login.css'
-// import { Link } from 'react-router-dom'
-// import { Icon } from '@iconify/react'
+import { Link } from 'react-router-dom'
 
 function Login() {
   return (
@@ -19,8 +18,10 @@ function Login() {
                   <input type="text" className='inputLogin' placeholder='' />
                   <label htmlFor="labelLogin" className='labelLogin'>Password</label>
               </div>
-
-              <input type="submit" className='submitButton' value="Sign In" />
+              
+              <Link to="/">
+                  <input type="submit" className='submitButton' value="Sign In" />
+              </Link>    
           </div>
       </div>
   )
