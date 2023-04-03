@@ -6,7 +6,7 @@ function BannerFeelYourShoes() {
     <>
     <div className='bannerFeel'>
       <img src={topImg} alt="BannerPrincipal" className='topImg'/>
-      <h1 className='titleGalactica'>GALACTICA</h1>
+      {/* <h1 className='titleGalactica'>GALACTICA</h1> */}
       <div className='feelYourSection'>
         <h3 className='caption'>A NEW WAY TO FEEL YOUR <br/> SHOES</h3>
         <button className='roundTransparentBtn whiteBorder' id='shopNowButton'>SHOP NOW</button>

@@ -19,9 +19,9 @@ function Navbar() {
           <Link to={"/shop"}>
             <RiShoppingBag3Line /> SHOP
           </Link>
-          <Link to={"#"}>
+          <Link to={"/login"}>
             {" "}
-            <CgShoppingCart /> BASKET
+            <CgShoppingCart /> LOG IN
           </Link>
           <Link to={"/admin"}>
             {" "}
@@ -47,7 +47,7 @@ function Navbar() {
           <Link to={"/shop"}>SHOP</Link>
           <Link to={"/"}> CIRCULARITY</Link>
           <Link to={"/"}>FAQS</Link>
-          <Link to={"/"}>LOG IN</Link>
+          <Link to={"/login"}>LOG IN</Link>
           <Link to={"/admin"}>ADMIN</Link>
         </div>
       </div>

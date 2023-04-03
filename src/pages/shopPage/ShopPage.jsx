@@ -3,7 +3,6 @@ import './ShopPage.css'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/footer'
 import SneakersServices from '../../apiServices/SneakersServices'
-import { useParams} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react';
 
@@ -20,19 +19,6 @@ export default function ShopPage() {
       SneakersServices.getAllSneakersCategories()
       .then((data)=>{setCategories(data)})
     },[])
-
-    const showItems = () => {
-
-    }
-
-    // const [sneakersByCategory, setSneakersByCategory] = useState([]);
-    // const {id} = useParams()
-    // useEffect(()=>{
-    //   SneakersServices.findSneakersByCategory(1)
-    //   .then((data)=>{setSneakersByCategory(data)})
-    //   },[])
-
-    //   console.log(sneakersByCategory);
     
   return (
     <>

@@ -26,18 +26,16 @@ function AddForm({changeFormState, id}) {
     useEffect(()=>{
         SneakersServices.getAllSneakersCategories()
           .then((dataSneakerCategory)=>{setCategories(dataSneakerCategory)})
-        },[]);
-
-    useEffect(()=>{
+        },{
         if (id) {
             SneakersServices.getSneakerById(id)
             .then((sneaker)=>{
                 sneaker.categoryId = sneaker.category.id
                 setSneaker(sneaker)
-            
             })
         }     
     },[]);
+
 
     const handleSneakerChange = (e) =>{
         let name = e.target.name;
@@ -68,7 +66,6 @@ function AddForm({changeFormState, id}) {
         <div className='addItem'>
             <div className='addForm'>
                 <AiOutlineClose className='closeForm' onClick={changeFormState}/>
-
                 <p className='titleForm'>To add or edit a product, the following information is requested:</p>
                 <form className='dataForm'>
                     <label htmlFor="brandForm" className = "FormSpace">Product brand:</label>
