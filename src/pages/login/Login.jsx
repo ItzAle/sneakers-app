@@ -15,10 +15,10 @@ function Login() {
               </div>
 
               <div className='inputContainer'>
-                  <input type="text" className='inputLogin' placeholder='' />
+                  <input type="password" className='inputLogin' placeholder='' />
                   <label htmlFor="labelLogin" className='labelLogin'>Password</label>
               </div>
-              
+
               <Link to="/">
                   <input type="submit" className='submitButton' value="Sign In" />
               </Link>    
