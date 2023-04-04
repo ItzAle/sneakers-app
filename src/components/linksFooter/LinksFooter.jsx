@@ -30,7 +30,7 @@ function LinksFooter() {
         </div>
       </div>
       <div className='logoBox'>
-        <img id='logo' src={logo}/>
+        <img id='logo' src={logo} alt='logoGalactica'/>
       </div>
     </div>
   )

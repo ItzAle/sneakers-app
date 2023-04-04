@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Login.css";
-import { Link, Navigate } from "react-router-dom";
-import SneakersServices from "../../apiServices/SneakersServices";
+import { Link} from "react-router-dom";
 
 function Login({ validateEmail, validatePass, login}) {
   function validateLoginForm() {

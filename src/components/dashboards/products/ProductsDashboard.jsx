@@ -18,6 +18,7 @@ function Dashboard() {
   }
 
   const [isDeleted, setIsDeleted] = useState(false);
+  console.log(isDeleted);
 
   const handleDelete = (id) => {
     SneakersServices.deleteSneaker(id)

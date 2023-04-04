@@ -7,12 +7,11 @@ function Register({ validateEmail, validatePass }) {
   function validateRegisterForm() {
     var x = document.forms["Form"]["name"].value;
     var y = document.forms["Form"]["email"].value;
-    var z = document.forms["Form"]["password"].value;
     if (x === "" || y === "") {
       alert("Name and Email must be filled out.");
       return false;
-    }
-  }
+    }}
+    
   return (
     <div id="login">
       <form id="formLogin" name="Form" onSubmit={validateRegisterForm}>
