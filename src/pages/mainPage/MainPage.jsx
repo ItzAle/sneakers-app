@@ -7,10 +7,11 @@ import LinksFooter from "../../components/linksFooter/LinksFooter";
 import Footer from "../../components/footer/footer";
 import HighlightSection from "../../components/highlightSection/HighlightSection";
 
-function MainPage() {
+function MainPage({logout, admin}) {
+  console.log(admin);
   return (
     <div className="mainPage">
-      <Navbar />
+      <Navbar logout={logout} admin={admin}/>
       <BannerFeelYourShoes />
       <HighlightSection/>
       <BannerFreeShipping />

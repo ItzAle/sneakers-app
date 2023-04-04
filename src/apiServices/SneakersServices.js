@@ -49,6 +49,11 @@ const SneakersServices = {
         return axios.delete(url + `/${id}`)
             .then((res)=> res.data)
             .catch((err)=>console.log(err))
+    },
+    findAllAdmins() {
+        return axios.get(url + `/admins`)
+            .then((res)=>res.data)
+            .catch((err)=>console.log(err))
     }
 }
 

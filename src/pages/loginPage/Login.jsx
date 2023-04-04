@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import SneakersServices from "../../apiServices/SneakersServices";
 
-function Login({ validateEmail, validatePass }) {
+function Login({ validateEmail, validatePass, login}) {
   function validateLoginForm() {
     var x = document.forms["Form"]["Email"].value;
-    var y = document.forms["Form"]["password"].value;
     if (x === "") {
       alert("Name must be filled out.");
       return false;
@@ -48,7 +48,7 @@ function Login({ validateEmail, validatePass }) {
             type="submit"
             className="submitButton"
             value="Sign In"
-            onClick={validateEmail}
+            onClick={/*validateEmail*/ login}
           />
           <h5 className="registerNow">
             Not a member yet?{" "}

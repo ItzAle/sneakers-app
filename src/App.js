@@ -1,10 +1,12 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/mainPage/MainPage";
 import InfoPage from "./pages/infoPage/InfoPage";
 import AdminPage from "./pages/adminPage/AdminPage";
 import ShopPage from "./pages/shopPage/ShopPage";
 import Login from "./pages/loginPage/Login";
 import Register from "./pages/registerPage/Register";
+// import SneakersServices from "./apiServices/SneakersServices";
+import { /*useEffect,*/ useState } from "react";
 
 function App() {
   // Validar Email
@@ -33,21 +35,56 @@ function App() {
     passErr.innerHTML = "Password must be at least 8 characters long";
     return true;
   }
+
+  const [admin, setAdmin] = useState(null);
+
+  // useEffect(() => {
+  //   SneakersServices.findAllAdmins()
+  //     .then((data) => { setAdmin(data[0]) })
+  // }, [])
+
+  const login = () => {
+    setAdmin({
+      id: 1,
+      name: "Jhon"
+    })
+  }
+
+  const logout = () => {
+    setAdmin(null)
+    document.location.reload();
+  }
+
+  const RequireAuth = ({isLogged, children}) => {
+
+    if (isLogged) {  
+    return <Navigate to="/"/>
+    }
+    return children
+    };
+
+  console.log(admin);
   return (
     <Routes>
-      <Route
-        path="/login"
+      {/* <Route path="/login"
         element={
-          <Login validateEmail={validateEmail} validatePass={validatePass} />
-        }
-      />
-      <Route
-        path="/register"
+          <Login validateEmail={validateEmail} validatePass={validatePass} login={admin}/>
+        }/> */}
+      <Route path="/register"
         element={
           <Register validateEmail={validateEmail} validatePass={validatePass} />
+        }/>
+      <Route path="/login"
+        element={
+          <RequireAuth isLogged={admin}>
+            <Login validateEmail={validateEmail} validatePass={validatePass} login={login}/>
+          </RequireAuth>
         }
-      />
-      <Route path="/" element={<MainPage />} />
+
+/>
+
+
+      <Route path="/" element={<MainPage logout={logout} admin={admin}/>} />
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/infoShoe/:id" element={<InfoPage />} />
       <Route path="/admin" element={<AdminPage />} />
