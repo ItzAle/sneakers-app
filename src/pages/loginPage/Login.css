@@ -19,15 +19,15 @@ body{
 
 #login #formLogin{
     margin: auto;
-    width: 340px;
-    height: 400px;
+    width: 360px;
+    /* height: 430px; */
     background-color: #f8f8f8;
     border-radius: 20px 100px;
-    padding: 80px 50px;
+    padding: 60px 35px;
     box-shadow: 10px 10px 21px -6px rgba(0, 0, 0, 0.2);
 }
 
-h1{
+.titleWelcome{
     margin-bottom: 30px;
 }
 
@@ -71,7 +71,7 @@ h1{
 #login #formLogin .submitButton{
     display: block;
     margin: auto;
-    padding: 15px 40px;
+    padding: 15px 30px;
     outline: none;
     border: none;
     background-color: #252629;
@@ -84,7 +84,7 @@ h1{
 #login #formLogin .submitButton:hover{
     border-radius: 5px 15px;
     border: none;
-    padding: 15px 45px;
+    padding: 15px 30px;
 }
 
 #login #formLogin .inputLogin:focus +.labelLogin{
@@ -107,10 +107,20 @@ h1{
     border: 1px solid #252629;
 }
 
+.registerNow{
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+span{
+    font-weight: bold;
+}
+
 @media (min-width: 768px){
     #login #formLogin{
         width: 450px;
-        height: 550px;
+        height: 540px;
     }
      
     #login #formLogin h1{
@@ -123,6 +133,11 @@ h1{
 
     .submitButton{
         font-size: 1.1em;
+    }
+
+    .registerNow{
+        margin-top: 25px;
+        font-size: 1em;
     }
 }
 

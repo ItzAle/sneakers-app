@@ -7,7 +7,7 @@ function Login() {
       <div id='login'>
           <div id='formLogin'>
 
-              <h1>Welcome to Galactica</h1>
+              <h1 className='titleWelcome'>Welcome to Galactica</h1>
 
               <div className='inputContainer'>
                   <input type="text" className='inputLogin' placeholder='' />
@@ -18,10 +18,13 @@ function Login() {
                   <input type="password" className='inputLogin' placeholder='' />
                   <label htmlFor="labelLogin" className='labelLogin'>Password</label>
               </div>
+              <div className='containerButons'>
+                  <Link to="/">
+                      <input type="submit" className='submitButton' value="Sign In" />
+                  </Link>
+                  <h5 className='registerNow'>Not a member yet? <Link to={"/register"}><span>Register now</span></Link> </h5>
+              </div>
 
-              <Link to="/">
-                  <input type="submit" className='submitButton' value="Sign In" />
-              </Link>    
           </div>
       </div>
   )
