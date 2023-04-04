@@ -1,12 +1,26 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.loginNow{
-    margin-top: 20px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 0.85em;
+.loginNow {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.85em;
+}
+#error-msg {
+  position: absolute;
+  top: 100%;
+  left: 2px;
+  font-size: 16px;
+  color: red;
+}
+#error-password {
+  position: absolute;
+  top: 100%;
+  left: 2px;
+  font-size: 16px;
+  color: red;
 }
