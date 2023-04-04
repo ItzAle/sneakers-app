@@ -7,6 +7,7 @@ import Login from "./pages/loginPage/Login";
 import Register from "./pages/registerPage/Register";
 // import SneakersServices from "./apiServices/SneakersServices";
 import { /*useEffect,*/ useState } from "react";
+import Error404 from "./pages/404Page/Error404";
 
 function App() {
   // Validar Email
@@ -88,6 +89,7 @@ function App() {
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/infoShoe/:id" element={<InfoPage />} />
       <Route path="/admin" element={<AdminPage />} />
+      <Route path="*" element={<Error404 />} />
     </Routes>
   );
 }
