@@ -12,12 +12,11 @@ function Register() {
             alert("Name and Email must be filled out.");
             return false;
         }
-        else if (z.length < 8)
+        else if (z.length < 20 && z.length > 8)
             {
             alert("Password must be at least 8 characters long.");
             return false;
-        }
-        }
+        }}
         function validateEmail(){
             var emailField = document.getElementById('user-email');
             var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
