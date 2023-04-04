@@ -26,7 +26,7 @@ function Register() {
                 return true;
             }else{
                 alert('Email is invalid');
-                return false;
+                return false; 
             }
         }
   return (
