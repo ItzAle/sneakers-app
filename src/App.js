@@ -6,15 +6,15 @@ import ShopPage from "./pages/shopPage/ShopPage";
 import Login from "./pages/loginPage/Login";
 import Register from "./pages/registerPage/Register";
 import Error404 from "./pages/404Page/Error404"
-// import SneakersServices from "./apiServices/SneakersServices";
-import { /*useEffect,*/ useState } from "react";
+import {useState } from "react";
 
 function App() {
+
   function validateEmail() {
     var emailField = document.getElementById("user-email");
     var emailError = document.getElementById("error-msg");
     var validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-
+    
     if (validEmail.test(emailField.value)) {
       emailError.innerHTML = "";
       return true;
@@ -38,11 +38,6 @@ function App() {
 
   const [admin, setAdmin] = useState(null);
 
-  // useEffect(() => {
-  //   SneakersServices.findAllAdmins()
-  //     .then((data) => { setAdmin(data[0]) })
-  // }, [])
-
   const login = () => {
     setAdmin({
       id: 1,
@@ -63,32 +58,26 @@ function App() {
     return children
     };
 
-  console.log(admin);
   return (
     <Routes>
-      {/* <Route path="/login"
-        element={
-          <Login validateEmail={validateEmail} validatePass={validatePass} login={admin}/>
-        }/> */}
+
       <Route path="/register"
         element={
           <Register validateEmail={validateEmail} validatePass={validatePass} />
-        }/>
+        } />
       <Route path="/login"
         element={
           <RequireAuth isLogged={admin}>
-            <Login validateEmail={validateEmail} validatePass={validatePass} login={login}/>
+            <Login validateEmail={validateEmail} validatePass={validatePass} login={login} />
           </RequireAuth>
-        }
-
-/>
+        }/>
 
 
-      <Route path="/" element={<MainPage logout={logout} admin={admin}/>} />
+      <Route path="/" element={<MainPage logout={logout} admin={admin} />} />
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/infoShoe/:id" element={<InfoPage />} />
       <Route path="/admin" element={<AdminPage />} />
-      <Route path="*" element={<Error404/>} />
+      <Route path="*" element={<Error404 />} />
     </Routes>
   );
 }

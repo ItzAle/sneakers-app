@@ -18,54 +18,25 @@ function Register({ validateEmail, validatePass }) {
         <h1 className="titleWelcome">Welcome to Galactica</h1>
 
         <div className="inputContainer">
-          <input
-            type="text"
-            className="inputLogin"
-            name="name"
-            id="user-email"
-          />
-          <label htmlFor="labelLogin" className="labelLogin">
-            Name
-          </label>
+          <input type="text" className="inputLogin" name="name" id="user-email" />
+          <label htmlFor="labelLogin" className="labelLogin"> Name </label>
         </div>
 
         <div className="inputContainer">
-          <input
-            type="text"
-            className="inputLogin"
-            name="email"
-            id="user-email"
-            onKeyUp={validateEmail}
-          />
-          <label htmlFor="labelLogin" className="labelLogin">
-            Email
-          </label>
+          <input type="text" className="inputLogin" name="email" id="user-email" onKeyUp={validateEmail} />
+          <label htmlFor="labelLogin" className="labelLogin"> Email </label>
           <span id="error-msg"></span>
         </div>
 
         <div className="inputContainer">
-          <input
-            type="password"
-            className="inputLogin"
-            name="password"
-            onKeyUp={validatePass}
-            maxLength="30"
-          />
-          <label htmlFor="labelLogin" className="labelLogin">
-            Password
-          </label>
+          <input type="password" className="inputLogin" name="password" onKeyUp={validatePass} maxLength="30" />
+          <label htmlFor="labelLogin" className="labelLogin"> Password </label>
           <span id="error-password"></span>
         </div>
 
         <div className="containerButons">
-          <input
-            type="submit"
-            className="submitButton"
-            value="Register"
-            onClick={validateEmail}
-          />
-          <h5 className="loginNow">
-            Are you already a member?{" "}
+          <input type="submit" className="submitButton" value="Register" onClick={validateEmail} />
+          <h5 className="loginNow"> Are you already a member?{" "}
             <Link to={"/login"}>
               <span>Login now</span>
             </Link>{" "}
@@ -73,7 +44,6 @@ function Register({ validateEmail, validatePass }) {
         </div>
       </form>
     </div>
-  );
-}
+  )}
 
 export default Register;
