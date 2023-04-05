@@ -19,7 +19,7 @@ function Login({ validateEmail, validatePass, login}) {
 
         <div className="inputContainer">
           <input type="text" className="inputLogin" name="Email" id="user-email" onKeyUp={validateEmail} />
-          <label htmlFor="labelLogin" className="labelLogin"> </label>
+          <label htmlFor="labelLogin" className="labelLogin"> Email </label>
           <span id="error-msg"></span>
         </div>
 
