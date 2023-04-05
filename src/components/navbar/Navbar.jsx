@@ -6,7 +6,7 @@ import { CgLogIn, CgShoppingCart } from "react-icons/cg";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import "../../assets/global.css";
 
-function Navbar({logout, admin}) {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -18,15 +18,9 @@ function Navbar({logout, admin}) {
           <Link to={"/shop"}>
             <RiShoppingBag3Line /> SHOP
           </Link>
-        
-          {admin === null
-            ? <Link to={"/login"}>
-                <CgShoppingCart /> LOG IN
-              </Link>
-            : <Link onClick={logout} to={"/"}>
-                <CgShoppingCart /> LOG OUT
-              </Link>
-          }
+          <Link to={"/login"}>
+            <CgShoppingCart /> LOG IN
+          </Link>
           <Link to={"/admin"}>
             {" "}
             <CgLogIn /> ADMIN

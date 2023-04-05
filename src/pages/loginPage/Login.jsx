@@ -1,16 +1,11 @@
 import React from "react";
 import "./Login.css";
 import { Link} from "react-router-dom";
+import validateEmail from "../../components/validation/EmailValidation";
+import validatePass from "../../components/validation/PasswordValidation";
+import validateLoginForm from "../../components/validation/LoginFormValidation";
 
-function Login({ validateEmail, validatePass, login}) {
-  
-  function validateLoginForm() {
-    var x = document.forms["Form"]["Email"].value;
-    if (x === "") {
-      alert("Name must be filled out.");
-      return false;
-    }
-  }
+function Login() {
   return (
     <div id="login">
       <form id="formLogin" name="Form" onSubmit={validateLoginForm}>
@@ -30,7 +25,15 @@ function Login({ validateEmail, validatePass, login}) {
         </div>
 
         <div className="containerButons">
-          <input type="submit" className="submitButton" value="Sign In" onClick={/*validateEmail*/ login} />
+          <Link to={"/"}>
+            <input
+              type="submit"
+              className="submitButton"
+              value="Sign In"
+              onClick={""}
+            />
+          </Link>
+          
           <h5 className="registerNow"> Not a member yet?{" "}
             <Link to={"/register"}>
               <span>Register now</span>
