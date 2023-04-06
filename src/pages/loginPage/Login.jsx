@@ -19,10 +19,8 @@ function Login() {
   const handleSubmit = e => {
     e.preventDefault()
     localStorage.setItem("login", JSON.stringify(user))
-    navigate("/shop")
+    navigate("/")
   }
-
-  // console.log(user);
 
   const userItem = JSON.parse(localStorage.getItem("login"));
 

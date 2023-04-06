@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import logo from "../../assets/logo"
 import { CgLogIn, CgShoppingCart } from "react-icons/cg";
 import { RiShoppingBag3Line } from "react-icons/ri";
@@ -8,6 +8,16 @@ import "../../assets/global.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate()
+
+  const handleLogOut = e => {
+    e.preventDefault()
+    localStorage.removeItem("login", "")
+    navigate("/login")
+  }
+
+  const userItem = JSON.parse(localStorage.getItem("login"));
+
   return (
     <div>
       <div className="navbar">
@@ -18,11 +28,18 @@ function Navbar() {
           <Link to={"/shop"}>
             <RiShoppingBag3Line /> SHOP
           </Link>
-          <Link to={"/login"}>
-            <CgShoppingCart /> LOG IN
+          {
+          userItem 
+
+          ? <Link onClick={handleLogOut}>
+            <CgShoppingCart/> LOG OUT
           </Link>
+
+          : <Link to={"/login"}>
+            <CgShoppingCart/> LOG IN
+          </Link>
+          }
           <Link to={"/admin"}>
-            {" "}
             <CgLogIn /> ADMIN
           </Link>
         </div>
