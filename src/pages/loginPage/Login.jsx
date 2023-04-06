@@ -4,7 +4,7 @@ import { Link, useNavigate} from "react-router-dom";
 import validateEmail from "../../components/validation/EmailValidation";
 import validatePass from "../../components/validation/PasswordValidation";
 import validateLoginForm from "../../components/validation/LoginFormValidation";
-import useLocalStorage  from "../../hooks/useLocalStorage";
+// import useLocalStorage  from "../../hooks/useLocalStorage";
 
 function Login() {
 
@@ -18,13 +18,20 @@ function Login() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    localStorage.setItem(`${user.email}`)
+    localStorage.setItem("login", JSON.stringify(user))
     navigate("/shop")
   }
+
+  // console.log(user);
+
+  const userItem = JSON.parse(localStorage.getItem("login"));
+
+  console.log(userItem);
 
   const handleOnChange = e => {
     setUser({ ...user, [e.target.name]: e.target.value});
   }
+
 
   return (
     <div id="login">
@@ -36,7 +43,7 @@ function Login() {
           <input 
           type="text" 
           className="inputLogin" 
-          name="Email" 
+          name="email" 
           id="user-email" 
           onKeyUp={validateEmail} 
           onChange={handleOnChange}
@@ -46,7 +53,14 @@ function Login() {
         </div>
 
         <div className="inputContainer">
-          <input type="password" className="inputLogin" name="password" onKeyUp={validatePass} maxLength="30" />
+          <input 
+            type="password" 
+            className="inputLogin" 
+            name="password" 
+            onKeyUp={validatePass} 
+            onChange={handleOnChange}
+            maxLength="30" 
+          />
           <label htmlFor="labelLogin" className="labelLogin"> Password </label>
           <span id="error-password"></span>
         </div>
