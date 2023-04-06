@@ -1,11 +1,14 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet} from "react-router-dom";
 
-const RequireAuth = ({isLogged, children}) => {
 
-    if (!isLogged) {  
-    return <Navigate to="/login"/>
+const RequireAuth = ({children, redirectTo="*"}) => {
+
+    const userItem = JSON.parse(localStorage.getItem("login"));
+
+    if (!userItem) {  
+    return <Navigate to={redirectTo}/>
     }
-    return children
+    return children ? children : <Outlet/>
     };
 
 export default RequireAuth    

@@ -14,20 +14,25 @@ function App() {
     <Routes>
 
       <Route path="/register" element={ <Register/> }/>
-
       <Route path="/login" element={ <Login/>} />
-
-      <Route path="/" element={<MainPage/>} />
-
+      
+      <Route path="/" element={<MainPage />} />
       <Route path="/shop" element={<ShopPage />} />
-
       <Route path="/infoShoe/:id" element={<InfoPage />} />
+      
+      <Route path="/admin" element={
+      
+      <RequireAuth>
+        <AdminPage/>
+      </RequireAuth>
+ 
+      } />
 
-      <Route path="/admin" element={<AdminPage />} />
+      
+      
+      <Route path="*" element={<Error404 />} /> 
 
-      <Route path="*" element={<Error404 />} />
     </Routes>
-
   );
 }
 

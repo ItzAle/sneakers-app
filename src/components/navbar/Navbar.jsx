@@ -28,17 +28,14 @@ function Navbar() {
           <Link to={"/shop"}>
             <RiShoppingBag3Line /> SHOP
           </Link>
-          {
-          userItem 
+          {userItem
+              ? <Link onClick={handleLogOut} to={"/"}>
+                  <CgShoppingCart /> LOG OUT
+                </Link>
 
-          ? <Link onClick={handleLogOut}>
-            <CgShoppingCart/> LOG OUT
-          </Link>
-
-          : <Link to={"/login"}>
-            <CgShoppingCart/> LOG IN
-          </Link>
-          }
+              : <Link to={"/login"}>
+                  <CgShoppingCart /> LOG IN
+                </Link>}
           <Link to={"/admin"}>
             <CgLogIn /> ADMIN
           </Link>
