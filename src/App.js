@@ -27,8 +27,6 @@ function App() {
       </RequireAuth>
  
       } />
-
-      
       
       <Route path="*" element={<Error404 />} /> 
 

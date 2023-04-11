@@ -10,7 +10,7 @@ function Login() {
 
   const userModel = {
     email : "",
-    password : "",
+    password : ""
 }
 
   const [user, setUser] = useState(userModel);
