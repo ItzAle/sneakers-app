@@ -8,6 +8,10 @@ import Footer from "../../components/footer/footer";
 import HighlightSection from "../../components/highlightSection/HighlightSection";
 
 function MainPage() {
+
+  const userItem = JSON.parse(localStorage.getItem("login"));
+  console.log(userItem);
+  
   return (
     <div className="mainPage">
       <Navbar/>
