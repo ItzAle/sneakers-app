@@ -1,7 +1,7 @@
 function validatePass() {
     var y = document.forms["Form"]["password"].value;
     var passErr = document.getElementById("error-password");
-    if (y.length > 8) {
+    if (y.length >= 7) {
       passErr.innerHTML = "";
       return false;
     }
