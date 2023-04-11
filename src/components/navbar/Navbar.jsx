@@ -13,7 +13,7 @@ function Navbar() {
   const handleLogOut = e => {
     e.preventDefault()
     localStorage.removeItem("login", "")
-    navigate("/")
+    navigate("/login")
   }
 
   const userItem = JSON.parse(localStorage.getItem("login"));
