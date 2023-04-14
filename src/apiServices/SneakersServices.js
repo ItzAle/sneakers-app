@@ -54,18 +54,6 @@ const SneakersServices = {
         return axios.get(url + `/admins`)
             .then((res)=>res.data)
             .catch((err)=>console.log(err))
-    },
-
-    registerNewUser(data){
-        return axios.post(url + `/register`, data)
-            .then((res)=> res.data)
-            .catch((err)=>console.log(err))
-    },
-
-    loginUser(data){
-        return axios.post(url + `/login`, data)
-            .then((res)=> res.data)
-            .catch((err)=>console.log(err))
     }
 }
 export default SneakersServices

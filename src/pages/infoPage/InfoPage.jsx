@@ -7,7 +7,9 @@ import SneakersServices from '../../apiServices/SneakersServices'
 
 function InfoPage() {
     const[sneakerId, setSneakerId] = useState([])
+    
     const {id} = useParams()
+
     useEffect(()=>{
       SneakersServices.getSneakerById(id)
         .then((data)=> setSneakerId(data))

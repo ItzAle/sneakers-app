@@ -13,7 +13,7 @@ function Navbar() {
   const handleLogOut = e => {
     e.preventDefault()
     localStorage.removeItem("login", "")
-    navigate("/login")
+    navigate("/")
   }
 
   const userItem = JSON.parse(localStorage.getItem("login"));
@@ -36,9 +36,12 @@ function Navbar() {
               : <Link to={"/login"}>
                   <CgShoppingCart /> LOG IN
                 </Link>}
-          <Link to={"/admin"}>
-            <CgLogIn /> ADMIN
-          </Link>
+          {userItem 
+            ? <Link to={"/admin"}>
+              <CgLogIn /> ADMIN
+            </Link>
+            : ''
+          }
         </div>
         {/* Burger menu */}
         <div
@@ -63,7 +66,10 @@ function Navbar() {
             ?<Link onClick={handleLogOut} to={""}>LOG OUT</Link>
             :<Link to={"/login"}>LOG IN</Link>
           }
-          <Link to={"/admin"}>ADMIN</Link>
+          {userItem 
+          ? <Link to={"/admin"}>ADMIN</Link>
+          : ""  
+          }
         </div>
       </div>
     </div>

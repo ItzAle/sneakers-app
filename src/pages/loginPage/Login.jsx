@@ -11,7 +11,7 @@ function Login() {
   const userModel = {
     email : "",
     password : ""
-}
+  }
 
   const [user, setUser] = useState(userModel);
   let navigate = useNavigate();

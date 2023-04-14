@@ -19,22 +19,24 @@ function AddForm({changeFormState, id}) {
         highlights : "",
         categoryId : "1"
     }
-
+    console.log(id)
     const [categories, setCategories] = useState([categoryModel]);
     const [sneaker, setSneaker] = useState(sneakerModel);
-
+    
     useEffect(()=>{
         SneakersServices.getAllSneakersCategories()
           .then((dataSneakerCategory)=>{setCategories(dataSneakerCategory)})
-        },{
+        },[]);
+
+    useEffect(()=>{
         if (id) {
             SneakersServices.getSneakerById(id)
             .then((sneaker)=>{
                 sneaker.categoryId = sneaker.category.id
                 setSneaker(sneaker)
             })
-        }     
-    },[]);
+        } 
+    },[])
 
 
     const handleSneakerChange = (e) =>{
