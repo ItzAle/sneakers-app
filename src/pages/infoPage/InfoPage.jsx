@@ -11,7 +11,7 @@ function InfoPage() {
     useEffect(()=>{
       SneakersServices.getSneakerById(id)
         .then((data)=> setSneakerId(data))
-    },[])
+    },[id])
 
   return (
     <>
