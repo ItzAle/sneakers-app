@@ -1,4 +1,4 @@
-import {Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MainPage from "./pages/mainPage/MainPage";
 import InfoPage from "./pages/infoPage/InfoPage";
 import AdminPage from "./pages/adminPage/AdminPage";
@@ -13,24 +13,17 @@ function App() {
   return (
     <Routes>
 
-      <Route path="/register" element={ <Register/> }/>
-      <Route path="/login" element={ <Login/>} />
-      
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/" element={<MainPage />} />
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/infoShoe/:id" element={<InfoPage />} />
-      
       <Route path="/admin" element={
-      
-      <RequireAuth>
-        <AdminPage/>
-      </RequireAuth>
- 
+        <RequireAuth>
+          <AdminPage />
+        </RequireAuth>
       } />
-
-      
-      
-      <Route path="*" element={<Error404 />} /> 
+      <Route path="*" element={<Error404 />} />
 
     </Routes>
   );

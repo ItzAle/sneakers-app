@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-// import logo from "../../assets/logo"
 import { CgLogIn, CgShoppingCart } from "react-icons/cg";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import "../../assets/global.css";
@@ -29,18 +28,17 @@ function Navbar() {
             <RiShoppingBag3Line /> SHOP
           </Link>
           {userItem
-              ? <Link onClick={handleLogOut} to={"/"}>
-                  <CgShoppingCart /> LOG OUT
-                </Link>
+            ? <Link onClick={handleLogOut} to={"/"}>
+              <CgShoppingCart /> LOG OUT
+            </Link>
 
-              : <Link to={"/login"}>
-                  <CgShoppingCart /> LOG IN
-                </Link>}
+            : <Link to={"/login"}>
+              <CgShoppingCart /> LOG IN
+            </Link>}
           <Link to={"/admin"}>
             <CgLogIn /> ADMIN
           </Link>
         </div>
-        {/* Burger menu */}
         <div
           className={`nav_toggle ${isOpen && "open"}`}
           onClick={() => setIsOpen(!isOpen)}

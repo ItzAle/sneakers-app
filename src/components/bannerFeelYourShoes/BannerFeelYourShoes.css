@@ -1,33 +1,39 @@
-.bannerFeel{
+.bannerFeel {
     position: relative;
 }
-.topImg{
+
+.topImg {
     width: 100%;
     height: 100%;
 }
-.titleGalactica{
+
+.titleGalactica {
     font-size: 4em;
     text-align: center;
 }
-.feelYourSection{
+
+.feelYourSection {
     height: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.caption{
+
+.caption {
     text-align: center;
     font-weight: 500;
     font-size: 1.3em;
 }
-#shopNowButton{
+
+#shopNowButton {
     position: absolute;
     top: 210px;
     font-size: 1.1em;
     font-weight: 300;
     padding: 4px 30px;
 }
-#ourNowButton{
+
+#ourNowButton {
     position: absolute;
     font-size: 1em;
     font-weight: 500;
@@ -36,21 +42,28 @@
     bottom: 23px;
 }
 
-@media (min-width: 1100px){
-    .bannerFeel{
+.pointerCursor {
+    cursor: pointer;
+}
+
+@media (min-width: 1100px) {
+    .bannerFeel {
         display: flex;
         margin-left: 40px;
         height: 400px;
     }
-    .topImg{
+
+    .topImg {
         width: 50%;
         height: 100%;
         object-fit: cover;
     }
-    .titleGalactica{
+
+    .titleGalactica {
         display: none;
     }
-    .feelYourSection{
+
+    .feelYourSection {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -59,12 +72,14 @@
         width: 50%;
         height: 427px;
     }
-    .caption{
+
+    .caption {
         text-align: center;
         font-weight: 500;
         font-size: 1.7em;
     }
-    #shopNowButton{
+
+    #shopNowButton {
         position: static;
         font-weight: 500;
         background-color: transparent;
@@ -73,7 +88,8 @@
         border-radius: 45px;
         padding: 4px 30px;
     }
-    #ourNowButton{
+
+    #ourNowButton {
         display: none;
-    } 
+    }
 }
